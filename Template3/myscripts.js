@@ -3,9 +3,9 @@ var animate, left=0, imgObj=null;
 function init(){
 
    imgObj = document.getElementById('myImage');
-   imgObj.style.position= 'absolute';
-   imgObj.style.top = '240px';
-   imgObj.style.left = '-300px';
+   imgObj.style.position= 'relative';
+   imgObj.style.top = '1%';
+   imgObj.style.left = '-1%';
    imgObj.style.visibility='hidden';
 
    moveRight();

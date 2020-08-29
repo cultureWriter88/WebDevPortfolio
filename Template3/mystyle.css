@@ -1,3 +1,22 @@
+.tree{
+    position: left;
+    width: 100%;
+    margin: 10%;
+}
+#treeText{
+    width: 90%;
+    margin: 10%;
+    text-align: left;
+}
+#treeLogo{
+    display: inline-block;
+}
+
+
+
+
+
+
 #slideicon1{
     width: 30%;
 }
@@ -8,13 +27,18 @@
 
 }
 
+
+
+
+
+
+
 #rowTwo {
 }
 
 #slideicon1{
     float: left;
-    margin-top: 12.5%;
-        margin: 10%;
+        margin: 0%;
 
 }
 
@@ -25,9 +49,9 @@
 }
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: red; /* Green */
     border: none;
-    color: white;
+    color: red;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
