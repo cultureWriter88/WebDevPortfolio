@@ -1,0 +1,195 @@
+html {
+    font-size: 10px;
+    background-color: #333;
+    font-family: 'Chelsea Market', serif;
+    color: black;
+    box-sizing: border-box;
+    
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+* img{
+  max-width: 100%;
+  height: auto;
+}
+
+
+.grid {
+  display: inline-grid;
+  flex-wrap: wrap;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  background-color:;
+  padding: %;
+  max-width: 680px;
+  margin: 0, auto;
+}
+
+.grid-item {
+  border: 0px solid rgba(0, 0, 0, 0.8);
+  padding: 3%;
+  font-size: 90%;
+  overflow: hidden; /*HELPS POPUP TRANSITION*/
+        font-size: 100%;
+
+}
+
+
+/*FORMS CSS*/
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+}
+/*FORMS CSS ENDS*/
+
+
+
+
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  transition: all ease .5s;
+}
+
+.grid-item:hover img {
+  transform: scale(1.5);
+    -webkit-filter:invert(.8);
+}
+
+body {  
+  font-family: Chelsea Market, Arial, sans-serif;
+    src: url(https://fonts.google.com/specimen/Chelsea+Market#standard-styles/);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #333;
+  margin: 0;
+    background-color: #333;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 460px) {
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+}
+
+h2 {
+  font-size: 3.25rem;
+}
+
+a {
+  color: #477ca7;
+}
+
+a:visited {
+  color: #74638f;
+}
+
+h3 {
+    font-size: 3.0rem;
+    background-color: #333;
+    color: white;  
+    padding: 10px;  
+}
+
+#main {
+  margin: 30px 8px;
+  padding: 15px;
+  border-radius: 5px;
+  background: white;
+}
+
+@media (max-width: 460px) {
+  #main {
+    margin: 0;
+  }
+}
+
+#img-div {
+  background: #333;
+  padding: 10px;
+  margin: 0;
+  background-color: white;.
+  background-repeat: no-repeat;
+    
+    
+}
+
+#img-caption {
+  margin: 15px 0 5px 0;
+    background-color: lightyellow;
+    position: center;
+}
+
+@media (max-width: 460px) {
+  #img-caption {
+    font-size: 1.4rem;
+  }
+}
+
+#headline {
+  margin: 50px 0;
+  text-align: center;
+
+}
+
+#tribute-info {
+    background-repeat:no-repeat;
+    background-position: center;
+    background-color: white;
+}
+
+ul {
+    max-width: 850px;
+    margin: 0 auto 50px auto;
+    text-align: left;
+    line-height: 1.6;
+
+}
+
+li {
+  margin: 16px 0;
+}
+
+blockquote {
+  font-style: italic;
+  max-width: 545px;
+  margin: 0 auto 50px auto;
+  text-align: left;
+}
