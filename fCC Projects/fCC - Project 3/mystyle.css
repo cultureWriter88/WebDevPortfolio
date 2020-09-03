@@ -1,0 +1,111 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+
+}
+
+body {
+  background-color: transparent;
+  font-family: 'Lato', sans-serif;
+  background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
+  color: white;
+}
+
+.container {
+    padding: 5%;
+}
+
+h2 {
+  text-align: left;
+  color: black;
+}
+
+p {
+  font-size: 100%;
+}
+
+li {
+  list-style: none;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+
+}
+
+.logo {
+  width: 120px;
+  background-color: white;
+  margin-left: .20%;
+  margin-right: .75%;
+  color: black;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  min-height: 0px;
+  display: flex;
+  background-color: #333;
+  width: 100%;
+  padding: .434%;
+}
+
+#youTubeClip {
+  margin-top: 6%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: -1%;
+  
+}
+
+.grid {
+    display: flex;
+    font-size;  100%;
+    padding-top: 1.5%;
+    height: 300px;
+}
+
+.productLogo {
+  margin-left: 0;
+  width: 100px;  
+}
+#survey-form {
+  font-size: 125%;
+  background-color: #333;
+  background-opacity: 50%;
+  margin-top: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#name, #email, #number {
+  color: white;
+
+}
+
+input {
+  width: 100%;
+}
+
+.btn {
+  padding: 0 20px;
+  height: 40px;
+  font-size: 1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 2px purple solid;
+  border-radius: 2px;
+  background: yellow;
+  cursor: pointer;
+  margin-left: 45%;
+  border-radius: 10px;
+  color: purple;
+}
+
