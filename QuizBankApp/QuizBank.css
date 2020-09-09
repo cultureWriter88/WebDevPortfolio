@@ -30,17 +30,11 @@ body.wrong {
 }
 
 .container {
-    widows: 800px;
-    max-width: 80%;
-    background-color: whitesmoke;
-    border-radius:5px;
-    padding:10px;
-}
-.container {
     width: 800;
     max-width: 80%;
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 10px;
+    padding:10px;
     box-shadow: 0 0 10px 5px;
 }
 
@@ -66,11 +60,27 @@ body.wrong {
     border-width: 1.25px;
 }
 
-.btn-correct {
+.btn.correct {
     --hue: var(--hue-correct);
     color: black;
 }
 
 .btn-wrong {
     --hue: var(--hue-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
 }
