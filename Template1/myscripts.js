@@ -36,7 +36,6 @@ function changeImg(){
         i = 0;
     }
     setTimeout("changeImg()",time); // the timing
-
 }
 window.onload = changeImg; //start after page is loaded
 
@@ -44,32 +43,20 @@ window.onload = changeImg; //start after page is loaded
 
 //Slide-In Text Animation
 function scrollAppear(){
-var introText=document.querySelector('.intro-text');
-var introPosition=introText.getBoundingClientRect().top;
-var screenPosition=window.innerHeight/2;
-if(introPosition<screenPosition){
-    introText.classList.add('intro-appear');
-} else {
-document.getElementById("navbar").style.top = "-50px";
-}
+    var introText=document.querySelector('.intro-text');
+    var introPosition=introText.getBoundingClientRect().top;
+    var screenPosition=window.innerHeight/2;
+        if (introPosition<screenPosition){
+            introText.classList.add('intro-appear');
+        } else {
+        document.getElementById("navbar").style.top = "-50px";
+        }
 }
 window.addEventListener('scroll',scrollAppear);
 
 
 
 ///////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
