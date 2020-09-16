@@ -1,10 +1,13 @@
 :root{
     font-family: 'Special Elite', cursive;
-    margin-left: -10px;
-    margin-right: -10px;
-    background-color: #fae592;
-
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #333;
+    box-sizing: border-box;
 }
+
+
+
 
 
 
@@ -12,18 +15,17 @@
 /* NavBar - Starts */
 #navbar {
   z-index:1;
-  background-color:#96ceb4; /* Black background color */
+  background-color:#333; /* Black background color */
   position: fixed; /* Make it stick/fixed */
   top: 0; /* Stay on top */
   width: 100vw; /* Full width */
   transition: top .5s; /* Transition effect when sliding down (and up) */
   overflow: auto;
-  margin-left: .5%;
 }
 #navbar a {
   float: left;
   display: block;
-  color: #333;
+  color: black;
   text-align: center;
   padding: 15px;
   text-decoration: none;
@@ -38,11 +40,47 @@
 
 
 
-/* SlideShow - Starts */
-#slideshow{
-    height: 100vh;
+
+
+
+
+
+
+
+/* SlideShow - Start */
+
+/* Contains the Slideshow div within itself */
+.container {
+  text-align: center;
+  color: white;
+  height: 100vh;
 }
-/* SlideShow - Ends */
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size:  300%; ;
+  transform: translate(-50%, -50%);
+}
+
+#slideshowText {
+  background-color: #333;
+  padding: 2%;
+  padding-bottom: 1%;
+}
+
+/* SlideShow - End */
+
+
+
+
+
+
+
+
+
 
 
 
@@ -55,7 +93,6 @@ th {
 tr{
     width: 100%;
 }
-
 li {
     display: block;
     float: right;
@@ -72,38 +109,64 @@ a:hover {
     background-color: lightcoral;
     box-sizing: border-box;
 }
-table, th, td {
+table, th, td, tr {
   border: 1px  black;
   padding: 2%;
 }
-
 table {
   border-spacing: 0px;
   border-color: green;
+  padding-top: 15%;
 }
+
 /* Apps Description - Ends */
 
 
 
 
+
+
+
+
+
+
+
 /* SlideIn Effect - Starts */
+.intro-text {
+}
+.secondRow {
+}
+
 #rowTwo {
-    background-color:#ddd;
-    height: 100vh;
+    background-image: url('images/image1.jpg');
+    display: center;
+}
+#trees{
+  margin: 50%;
 }
 .intro-text{
     width: 100%;
     opacity: 0;
     transform: translateX(100%);
     transition: .5s all ease-in-out;
+    justify-content: center;
+    align-items: center;
 }
 
 .intro-appear{
     opacity: 1;
     transform: translateX(0px);
-    color: darkred;
+    color: whitesmoke;
 }
 /* SlideIn Effect - Ends */
+
+
+
+
+
+
+
+
 
 
 
@@ -114,12 +177,14 @@ table {
   padding: 0;
   box-sizing: border-box;
   outline: none;
+
 }
 .wrapper{
   width: 66%;
-  margin-left: 13%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-left: 17%;
 
 }
 .wrapper h2{
