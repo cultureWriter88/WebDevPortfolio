@@ -9,22 +9,51 @@ const pokeTypeTwo = document.querySelector('.poke-type-two');
 const pokeWeight = document.querySelector('.poke-weight');
 const pokeHeight = document.querySelector('.poke-height');
 
-console.log(pokeName)
+// Constants and Variables
+const TYPES = [
+    'normal', 'fighting', 'flying', 'poison', 
+    'ground', 'rock', 'bug', 'ghost', 'steel', 
+    'fire', 'water', 'grass', 'electric', 'psychic', 
+    'ice', 'dragon', 'dark', 'fairy'
+];
 
 
-fetch('https://pokeapi.co/api/v2/pokemon/1')
+// Functions
+const capitalize = (str) => str[0].toUpperCase() + str.substr(1);
+
+const resetScreen = () => {
+    for (const type of TYPES) {
+        mainScreen.classList.remove(type);
+    }
+};
+
+fetch('https://pokeapi.co/api/v2/pokemon/9')
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+        resetScreen();
+
+        const dataTypes = data['types'];
+        const dataFirstType = dataTypes[0];
+        const dataSecondType = dataTypes[1];
+        pokeTypeOne.textContent = capitalize(dataFirstType['type']['name']);
+
+        if (dataSecondType) {
+            pokeTypeTwo.classList.remove('hide');
+            pokeTypeTwo.textContent = dataSecondType['type']['name'];
+        } else {
+            pokeTypeTwo.classList.add('hide');
+            pokeTypeTwo.textContent = ' ';
+        }
+        mainScreen.classList.add(dataFirstType['type']['name']);
         mainScreen.classList.remove('hide');
+
         pokeName.textContent=data['name'];
         pokeId.textContent = data['id'];
         pokeWeight.textContent = data['weight'];
         pokeHeight.textContent = data['height'];
 
-        const dataTypes = data ['types'];
-        pokeTypeOne.t
-        console.log(dataTypes);
+
+        pokeFrontImage.src = data['sprites']['front_default'] || ' '; 
+        pokeBackImage.src = data['sprites']['back_default'] || ' ';
     });
-// THIS ABOVE GATHERS DATA SO WE CAN WORK WITH IT LATER ON
 
