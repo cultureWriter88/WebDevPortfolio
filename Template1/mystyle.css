@@ -1,5 +1,6 @@
 :root{
     font-family: 'Special Elite', cursive;
+    font-family: 'VT323', monospace;
     margin-left: 0;
     margin-right: 0;
     background-color: #333;
@@ -53,13 +54,16 @@
 .container {
   text-align: center;
   color: white;
-  height: 100vh;
+  height: 100%;
+}
+#slide-in{
+  height: 100%;
 }
 
 /* Centered text */
 .centered {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   font-size:  300%; ;
   transform: translate(-50%, -50%);
@@ -88,9 +92,9 @@
 /* Apps Description - Starts */
 th {
     width: 30%;
-    background-color: #ddd;
+    background-color: #333333;
 }
-tr{
+tbody{
     width: 100%;
 }
 li {
@@ -111,7 +115,7 @@ a:hover {
 }
 table, th, td, tr {
   border: 1px  black;
-  padding: 2%;
+  padding: 1% ;
 }
 table {
   border-spacing: 0px;
@@ -132,18 +136,27 @@ table {
 
 
 /* SlideIn Effect - Starts */
+
+#dataTable{
+  width: 100%;
+}
+
+.intro-content {
+}
 .intro-text {
 }
 .secondRow {
+  background-repeat: no-repeat;
+  height: 100%;
 }
-
 #rowTwo {
-    background-image: url('images/image1.jpg');
+  padding-top: 0;
     display: center;
 }
-#trees{
-  margin: 50%;
+.rowFour {
+  height
 }
+
 .intro-text{
     width: 100%;
     opacity: 0;
@@ -172,18 +185,15 @@ table {
 
 
 /*CONTACT-FORM*/
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
+
 
 }
 .wrapper{
+  background-color: grey;
   width: 66%;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: 17%;
 
 }
