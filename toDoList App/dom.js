@@ -246,12 +246,12 @@
 
 
 
-var form = document.getElementById('addForm');
-var itemList = document.getElementById('items');
+var form = document.getElementById('addForm'); //form you will be working on
+var itemList = document.getElementById('items'); //items yo will have on 
 var filter = document.getElementById('filter');
 
 // Form submit event
-form.addEventListener('submit', addItem);
+form.addEventListener('submit', addItem); //Listen for submit event, then addItem 
 // Delete event
 itemList.addEventListener('click', removeItem);
 // Filter event
@@ -259,20 +259,20 @@ filter.addEventListener('keyup', filterItems);
 
 // Add item
 function addItem(e){
-  e.preventDefault();
+  e.preventDefault(); //Prevents default from happening
 
   // Get input value
-  var newItem = document.getElementById('item').value;
+  var newItem = document.getElementById('item').value; //gets the actual value of the newItem
 
   // Create new li element
   var li = document.createElement('li');
   // Add class
   li.className = 'list-group-item';
   // Add text node with input value
-  li.appendChild(document.createTextNode(newItem));
+  li.appendChild(document.createTextNode(newItem)); //Adds newItem to the li list
 
   // Create del button element
-  var deleteBtn = document.createElement('button');
+  var deleteBtn = document.createElement('button'); //deleteBtn adds button to newItem as well
 
   // Add classes to del button
   deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
@@ -289,7 +289,7 @@ function addItem(e){
 
 // Remove item
 function removeItem(e){
-  if(e.target.classList.contains('delete')){
+  if(e.target.classList.contains('delete')){ //Targets only the button when clicked not the entire item element
     if(confirm('Are You Sure?')){
       var li = e.target.parentElement;
       itemList.removeChild(li);
@@ -306,7 +306,7 @@ function filterItems(e){
   // Convert to an array
   Array.from(items).forEach(function(item){
     var itemName = item.firstChild.textContent;
-    if(itemName.toLowerCase().indexOf(text) != -1){
+    if(itemName.toLowerCase().indexOf(text) != -1){ //If it is not equal to -1 it is a match
       item.style.display = 'block';
     } else {
       item.style.display = 'none';
@@ -315,3 +315,5 @@ function filterItems(e){
 
   
 }
+
+//Things to ADD in the future include LOCAL STORAGE to save list.
