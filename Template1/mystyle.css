@@ -1,34 +1,51 @@
 :root{
     font-family: 'VT323', monospace;
-    margin-left: 0;
-    margin-right: 0;
-    background-color: #333;
-    box-sizing: border-box;
+    background-color:#390164;
+    display: grid;
 }
 
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1.5rem 2rem;
+  grid-gap: 1%;
 
+}
 
+.sub-wrapper{
 
+}
 
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    background-color: #96439d;
+}
+
+.box{
+    text-align: center;
+    padding: 1.5rem 2rem;
+    color: yellow;
+}
 
 
 /* NavBar - Starts */
 #navbar {
-  z-index:1;
+  z-index: 1;
   font-size: 150%;
-  background-color:#333; /* Black background color */
+  background-color: yellow; /* Black background color */
   position: fixed; /* Make it stick/fixed */
   top: 0; /* Stay on top */
   width: 100vw; /* Full width */
-  transition: top .5s; /* Transition effect when sliding down (and up) */
-  overflow: auto;
+  transition: top 3s; /* Transition effect when sliding down (and up) */
+  overflow: none;
+  padding: .5%;
 }
 #navbar a {
   float: left;
   display: block;
   color: black;
   text-align: center;
-  padding: 15px;
   text-decoration: none;
   position: relative;
 }
@@ -63,22 +80,29 @@
 /* Centered text */
 .centered {
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   font-size:  300%; ;
   transform: translate(-50%, -50%);
 }
 
 #slideshowText {
-  background-color: #333;
-  padding: 2%;
-  padding-bottom: 1%;
+  background-color: #390164;
+  padding: 1.5%;
+
 }
 
 /* SlideShow - End */
 
+/* Row Two */
+.wrapper #sub-wrapper{
+  display: grid;
+  grid-row: columns 1fr ;
+  background-color:grey;
+  width: 100%
+}
 
-
+/* Row Two End*/
 
 
 
@@ -90,19 +114,13 @@
 
 
 /* Apps Description - Starts */
-th {
-    width: 30%;
-    background-color: #333333;
-}
+
 tbody{
     width: 100%;
 }
 li {
     display: block;
-    float: right;
-    padding-right: 1%;
     background-color: lightcoral;
-    padding-top: 3%;
 }
 a {
     color: red;
@@ -112,20 +130,20 @@ a:hover {
     background-color: lightcoral;
     box-sizing: border-box;
 }
-table, th, td, tr {
-  padding: 2%;
+table, td {
+  color: yellow;
+  font-size: 115%;
+  margin: 1%;
 }
 table {
-  border-spacing: 0px;
   border-color: green;
   padding-top: 0;
 }
 #dataTable{
-  padding-top: 5% ;
-  padding-bottom: 5% ;
-  padding-left: 5% ;
-  padding-right: 5% ;
+  background-color: #96439d;
+  padding: 5%;
 }
+
 
 /* Apps Description - Ends */
 
@@ -143,6 +161,7 @@ table {
 
 #dataTable{
   width: 100%;
+  background-color: #96439d;
 }
 
 .intro-content {
@@ -195,23 +214,16 @@ table {
 
 /*CONTACT-FORM*/
 
-
-
-.wrapper{
-  background-color: #fe8b8e;
-  width: 66%;
-  justify-content: center;
-  align-items: center;
-  padding-top: 2.5%;
-  margin-top: 2.5%;
-  margin-left: 15%;
-  margin-right: 15%;
+.contactForm{
+  background-color: #96439d;
 }
 .wrapper h2{
 text-align: center;
+color: yellow;
 }
 .wrapper .input_field{
   margin-bottom: 1%;
+
 }
 .wrapper .input_field input[type="text"],
 .wrapper textarea{
@@ -228,7 +240,7 @@ text-align: center;
 
   padding: 10px;
   text-align: center;
-  width: 25%;
+  width: 15%;
   background: yellow;
   color: #332902;
   text-transform: uppercase;
@@ -241,7 +253,7 @@ text-align: center;
   margin-bottom: 20px;
   padding: 0px;
   text-align: center;
-  font-size: 14px;
+  font-size: 100%;
   transition: all 0.5s ease;
 }
 
@@ -264,13 +276,12 @@ footer{
 	bottom: 0;
 }
 .footer-distributed{
-	background-color: #333;
+	background-color: #96439d;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-	padding: 10% 10%;
-	margin-top: 0%;;
+  margin-top: 0%;
 }
 .footer-distributed .footer-left,
 .footer-distributed .footer-center,
@@ -279,7 +290,7 @@ footer{
 	vertical-align: top;
 }
 .footer-distributed .footer-left{
-	width: 55%;
+	width: 50%;
 }
 .footer-distributed h3{
 	color:  #ffffff;
@@ -289,10 +300,10 @@ footer{
 	color:  #5383d3;
 }
 .footer-distributed .footer-links{
-	color:  #ffffff;
+	color: yellow;
 	margin: 0% 0 0%;
 	padding: 0;
-    margin-bottom: 5%;
+  margin-bottom: 5%;
 }
 .footer-distributed .footer-links a{
 	display:inline-block;
@@ -301,24 +312,18 @@ footer{
 	color:  inherit;
 }
 .footer-distributed .footer-company-name{
-	color:  #8f9296;
+	color:  darkblue;
 	font-size: 100%;
 	font-weight: normal;
 	margin: 0;
 }
 .footer-distributed .footer-center{
-	width: 33%;
 }
 .footer-distributed .footer-center i{
 	background-color:  #33383b;
-	color: #ffffff;
-	font-size:;
-	width: 33%;
-	height: 38px;
-	border-radius: 50%;
+	color: yellow;
 	text-align: center;
-	line-height: 42px;
-	margin: 0px 15%;
+	line-height: 10%;
 	vertical-align: middle;
 }
 .footer-distributed .footer-center i.fa-envelope{
@@ -327,7 +332,7 @@ footer{
 }
 .footer-distributed .footer-center p{
 	display: inline-block;
-	color: #ffffff;
+	color: yellow;
 	vertical-align: middle;
 	margin:0;
 }
@@ -338,7 +343,7 @@ footer{
 	line-height:2;
 }
 .footer-distributed .footer-center p a{
-	color:  #5383d3;
+	color:  darkblue;
 	text-decoration: none;;
 }
 .footer-distributed .footer-right{
@@ -346,36 +351,13 @@ footer{
 }
 .footer-distributed .footer-company-about{
 	line-height: 20px;
-	color:  #92999f;
+	color:  yellow;
 	font-size: 13px;
 	font-weight: normal;
 	margin: 0;
 }
-.footer-distributed .footer-company-about span{
-	display: block;
-	color:  #ffffff;
-	font-size: 14px;
-	font-weight: bold;
-    margin-top: 2%;
-	margin-bottom: 0px;
-}
-.footer-distributed .footer-icons{
-	margin-top: 25px;
-}
-.footer-distributed .footer-icons a{
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-	background-color:  #33383b;
-	border-radius: 2px;
-	font-size: 20px;
-	color:#ffffff;
-	text-align: center;
-	line-height: 35px;
-	margin-right: 3px;
-	margin-bottom: 5px;
-}
+
+
 /*FOOTER END*/
 
 
