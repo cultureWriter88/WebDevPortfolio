@@ -7,7 +7,9 @@
 .wrapper{
   display: grid;
   grid-template-columns: 1fr;
-  padding: 1.5rem 2rem;
+  padding-left: 1.5rem 2rem;
+  padding-right: 1.5rem 2rem;
+
   grid-gap: 1%;
 
 }
@@ -39,7 +41,7 @@
   width: 100vw; /* Full width */
   transition: top 3s; /* Transition effect when sliding down (and up) */
   overflow: none;
-  padding: .5%;
+  padding: 1%;
 }
 #navbar a {
   float: left;
@@ -80,7 +82,7 @@
 /* Centered text */
 .centered {
   position: absolute;
-  top: 35%;
+  top: 45%;
   left: 50%;
   font-size:  300%; ;
   transform: translate(-50%, -50%);
@@ -88,8 +90,6 @@
 
 #slideshowText {
   background-color: #390164;
-  padding: 1.5%;
-
 }
 
 /* SlideShow - End */
@@ -97,7 +97,7 @@
 /* Row Two */
 .wrapper #sub-wrapper{
   display: grid;
-  grid-row: columns 1fr ;
+  grid-row: columns 1fr 1fr;
   background-color:grey;
   width: 100%
 }
@@ -119,7 +119,6 @@ tbody{
     width: 100%;
 }
 li {
-    display: block;
     background-color: lightcoral;
 }
 a {
@@ -143,7 +142,9 @@ table {
   background-color: #96439d;
   padding: 5%;
 }
-
+#trees img{
+  padding-bottom: 10%;
+}
 
 /* Apps Description - Ends */
 
@@ -197,7 +198,7 @@ table {
 .intro-appear{
     opacity: 1;
     transform: translateX(0px);
-    color: whitesmoke;
+    width: 98%;
 }
 /* SlideIn Effect - Ends */
 
