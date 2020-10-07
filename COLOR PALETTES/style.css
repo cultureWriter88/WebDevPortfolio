@@ -6,8 +6,14 @@ html{
 header{
     color: blue;
     font-size: larger;
-    margin-bottom: 2em;
-
+    margin-bottom: 1em;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+}
+header, h1{
+    font-size: 200%;
+    background-color: purple;
+    padding: .25em;
 }
 h1{
     margin: 0;
@@ -15,12 +21,15 @@ h1{
     color: #ffd300;
 }
 #zoom{
-    transition: transform 3s;
+    transition: transform 2s;
     box-shadow: 0 0 2px 2px yellow;
 }
 #zoom:hover {
-    transform: scale(1.25); 
-  }
+    transform: scale(1.05); 
+    overflow: none;
+}
+
+
 .wrapper{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -36,11 +45,12 @@ h1{
     color: white;
 }
 .wrapperTwo, p{
- color: black;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
 }
 button{
     position:relative;
-    margin-left: 45%;
 }
 .wrapperThree{
     display: grid;
@@ -51,7 +61,10 @@ button{
 img {
     width: 100%;
     height: auto;
-  }
+    align-items: center;
+    justify-content: center;
+}
+
 
 .box1{
     grid-column: 1/3;
@@ -68,4 +81,48 @@ img {
 .box4{
     grid-column: 1/3;
     grid-row: 1/3;
+}
+
+
+/* FOOTER FLEX BOX USED BELOW */
+.site-footer{
+    background-color: yellow;
+    width: 100%;
+    text-transform: uppercase;
+}
+.container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 1em;
+
+}
+.footer1{
+    flex: 2;
+    text-align: center;
+    align-items: center; 
+    justify-content: center;
+}
+.footer2{
+    flex:1;
+    text-align: center;
+    align-items: center; 
+    justify-content: center;
+}
+.footer3{
+    flex:1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+#aboutUs{
+    font-size: 200%;
+}
+hr{
+    color: none;
+    border-bottom: black;
 }
