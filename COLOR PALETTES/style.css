@@ -23,6 +23,7 @@ h1{
 #zoom{
     transition: transform 2s;
     box-shadow: 0 0 2px 2px yellow;
+
 }
 #zoom:hover {
     transform: scale(1.05); 
@@ -52,11 +53,55 @@ h1{
 button{
     position:relative;
 }
+
+
+/* SLIDESHOW */
+/* REVIEW CSS */
+.mySlides {
+    display: none;
+  }
+  
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -120px;
+    padding-left: 10px;
+    padding-right: px;
+    padding-bottom: 10px;
+    color: #A371D1;
+    font-weight: bold;
+    font-size: 60px;
+    transition: 0.5s ease;
+    border-radius: 0 15px 15px 0;
+  }
+  
+  .next {
+    right: 0px;
+    border-radius: 15px 0px 0px 15px;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    background-color: white;
+  }
+/* SLIDESHOW ENDS */
+
+
+
+
+
+
+
 .wrapperThree{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: minmax(auto);
     grid-gap: 1em;
+    object-fit: cover;
+
 }
 img {
     width: 100%;
