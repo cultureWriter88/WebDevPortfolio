@@ -31,7 +31,6 @@ function plusSlides(n) {
   slideIndex = slideIndex + n;
   clearTimeout(t);
   showSlides(slideIndex);
-  console.log(slideIndex);
 }
 
 function currentSlide(n) {
