@@ -1,8 +1,17 @@
+*{
+    background-color:transparent;
+}
 html{
-    background-color: #bd00ff;
+    background-color: transparent;
     font-family: 'VT323', monospace;
     padding: 5%;
+    
+    background-image: url(https://i.imgur.com/CgKDPlb.gif) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
+
 header{
     color: blue;
     font-size: larger;
