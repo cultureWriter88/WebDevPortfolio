@@ -22,6 +22,7 @@ function show() {
 
 // FADE IN ON SCROLL
 // .wrapperTwo FADING IN WHEN ITEM IS IN WINDOW VIEW
+*/
 
 /////////////////////////////////////////////////////
 
@@ -40,7 +41,6 @@ function plusSlides(n) {
 
 function currentSlide(n) {
   showSlides(slideIndex = n);
-
 }
 
 function showSlides(n) {
@@ -67,4 +67,3 @@ function showSlides(n) {
   t = setTimeout(showSlides, 5000);
 }
 // SLIDESHOW ENDS
-*/
