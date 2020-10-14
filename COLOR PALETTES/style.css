@@ -5,13 +5,15 @@ html{
     background-color: transparent;
     font-family: 'VT323', monospace;
     padding: 5%;
-    
+
     background-image: url(https://i.imgur.com/CgKDPlb.gif) ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
-
+body{
+    background-color: transparent;;
+}
 header{
     color: blue;
     font-size: larger;
