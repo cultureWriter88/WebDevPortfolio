@@ -1,10 +1,11 @@
+/*
 // FADE IN HEADER
 var opacity = 0; 
 var intervalID = 0; 
 window.onload = fadeIn; 
 
 function fadeIn() { 
-    setInterval(show, 300); 
+    setInterval(show, 100); 
 } 
 
 function show() { 
@@ -19,6 +20,11 @@ function show() {
     } 
 }; 
 
+// FADE IN ON SCROLL
+// .wrapperTwo FADING IN WHEN ITEM IS IN WINDOW VIEW
+*/
+
+/////////////////////////////////////////////////////
 
 // SLIDESHOW
 // REBUILD IN ES6
@@ -35,7 +41,6 @@ function plusSlides(n) {
 
 function currentSlide(n) {
   showSlides(slideIndex = n);
-
 }
 
 function showSlides(n) {
