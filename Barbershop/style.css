@@ -1,0 +1,160 @@
+*{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.navbar{
+  background-color: rgba(255, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 3px 3px 3px yellow;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 175%;
+  ;
+  
+}
+
+.navbar li{
+  display: inline-block;
+  list-style: none;
+  text-align: center;
+  float: inline-end;
+  padding: 10px;
+}
+
+/* ------------------- */
+
+.hero{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  align-items: center;
+}
+.heroText {
+  text-align: right;
+  margin-right: 5em;
+}
+
+.heroImage img{
+  width: 100%;
+  height: auto;
+  justify-content: left;
+  border-radius: 1em;
+}
+
+/* ------------------- */
+
+.title1Title{
+  font-size: 200%;
+  text-align: center;
+}
+
+.title1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  align-items: center;
+}
+
+.title1Text {
+  text-align: left;
+  margin-left: 5em;
+}
+.title1Text p{
+  text-align: justify;
+}
+
+.title1Image img{
+  width: 100%;
+  height: auto;
+}
+/* ----------------- */
+
+.title2Title{
+  font-size: 200%;
+  text-align: center;
+}
+
+.title2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  align-items: center;
+}
+.title2Text {
+  text-align: right;
+  margin-right: 5em;
+}
+
+.title2Image img{
+  width: 100%;
+  height: auto;
+  justify-content: left;
+  border-radius: 1em;
+}
+/* ---------------- */
+.ourTeam{
+  font-size: 200%;
+  text-align: center;
+}
+/* ---------------- */
+.threeCards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#adam, #abraham, #daniel{
+  background-color: rgba(255, 0, 0, 0.7);
+  border: solid;
+  border-radius: 1em;
+  margin: 3%;
+  width: auto;
+  height: 100%;
+  text-align: center;
+}
+#adam img{
+  width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#daniel img{
+  width: 85%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#abraham img{
+  width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* --------------- */
+
+.callToAction{
+  position: relative;
+  color: white;
+}
+.callToActionText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 500%;
+}
+.callToAction img{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+}
