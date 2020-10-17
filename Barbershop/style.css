@@ -1,6 +1,13 @@
 *{
   font-family: 'Courier New', Courier, monospace;
 }
+@media screen and (max-width: 800px) { 
+  .navbar {
+    background-color: black;
+    grid-template-columns: 1fr;
+  } 
+} 
+
 
 .navbar{
   background-color: rgba(255, 0, 0, 0.7);
@@ -14,15 +21,24 @@
 }
 #navLogo img{
   border-radius: 10em;
-  margin: .3em;
-
+  margin-left: 10%;
+  padding: 2%;
+  vertical-align: middle;
 }
+
+
+.navbar ul{
+  margin-right: 10%;
+}
+
 .navbar li{
   display: inline-block;
   list-style: none;
   text-align: center;
-  float: inline-end;
+  float: right;
   padding: 10px;
+  margin-left: 5%;
+  vertical-align: middle;
 }
 
 /* ------------------- */
@@ -121,6 +137,7 @@
   margin-bottom: 5%;
   margin-left: 10%;
   margin-right: 10%;
+
 }
 #adam, #abraham, #daniel{
   background-color: rgba(255, 0, 0, 0.351);
@@ -130,6 +147,8 @@
   width: auto;
   height: 100%;
   text-align: center;
+  border-style: none;
+  font-size: 150%;
 }
 #adam img{
   width: 75%;
@@ -148,6 +167,18 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.threeCards button{
+  background-color: magenta;
+  padding: 2em;
+  border-radius: 3em;
+  border-style: none;
+}
+.threeCards button:hover{
+  background-color: lightyellow;
+  border-style: solid;
+  border-color: magenta;
 }
 /* --------------- */
 
@@ -200,6 +231,7 @@ footer{
 
 
 #footerLogo img{
+  width: 125px;
   border-radius: 10em;
   margin: .3em;
   display: inline-block;
@@ -209,9 +241,3 @@ footer{
   display: inline-block;
 }
 
-@media screen and (min-width: 100px) { 
-  body { 
-    display: grid;
-    grid-template-columns: 1fr;
-  } 
-} 
