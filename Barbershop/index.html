@@ -66,25 +66,53 @@
   <div class="ourTeam">Our Team of Experts</div>
 
   <div class="threeCards">
+    
     <div id="adam">
       <h1>Adam</h1>
       <img src="images/adam.jpg">
-      <p>Hair Care Specialist</p>
-      <button>Hire Me</button>
+      <p>Hair Care Specialist</p><br>
+      <button id="adamButton" onclick="myFunction()">Lets Talk Hair Care</button>
+      <form id="myDIV">
+        <label for="fname">Full Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="phone">Phone #</label><br>
+        <input type="text" id="phone" name="phone"><br>
+        <label for="email">E-Mail address</label><br>
+        <input type="text" id="email" name="email"><br><br>
+        <button>Submit</button>
+      </form> 
     </div>
 
     <div id="daniel">
       <h1>Daniel</h1>
       <img src="images/daniel.jpg">
-      <p>Lead Stylist</p>
-      <button>Hire Me</button>
+      <p>Lead Stylist</p><br>
+      <button id="danielButton" onclick="myFunction1()">Lets Talk Style</button>
+      <form id="myDIV1">
+        <label for="fname">Full Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="phone">Phone #</label><br>
+        <input type="text" id="phone" name="phone"><br>
+        <label for="email">E-Mail address</label><br>
+        <input type="text" id="email" name="email"><br><br>
+        <button>Submit</button>
+      </form> 
     </div>
 
     <div id="abraham">
       <h1>Abraham</h1>
       <img src="images/abraham.jpg">
-      <p>Beard Grooming Specialist</p>
-      <button>Hire Me</button>
+      <p>Beard Grooming Specialist</p><br>
+      <button id="abrahamButton" onclick="myFunction2()">Lets Talk Beards</button>
+      <form id="myDIV2">
+        <label for="fname">Full Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="phone">Phone #</label><br>
+        <input type="text" id="phone" name="phone"><br>
+        <label for="email">E-Mail address</label><br>
+        <input type="text" id="email" name="email"><br><br>
+        <button>Submit</button>
+      </form> 
     </div>
   </div>
 
@@ -125,8 +153,14 @@
 </footer>
 
 
+<button onclick="myFunction()">Try it</button>
+
+<div id="myDIV">
+  This is my DIV element.
+</div>
 
 
-<script src="/script.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>

@@ -137,12 +137,14 @@
   margin-bottom: 5%;
   margin-left: 10%;
   margin-right: 10%;
-
+  width: 80%;
 }
+
 #adam, #abraham, #daniel{
   background-color: rgba(255, 0, 0, 0.351);
   border: solid;
   border-radius: 1em;
+  padding: 1em;
   margin: 3%;
   width: auto;
   height: 100%;
@@ -170,15 +172,22 @@
 }
 
 .threeCards button{
-  background-color: magenta;
-  padding: 2em;
-  border-radius: 3em;
-  border-style: none;
+  background-color: cornflowerblue;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-radius: 1em;
+  border-style: solid;
+  border-color: lightyellow;
+  font-size: 85%;
+}
+form{
+  margin-top: 1em;
+  display: none;
 }
 .threeCards button:hover{
   background-color: lightyellow;
   border-style: solid;
-  border-color: magenta;
+  border-color: cornflowerblue;
 }
 /* --------------- */
 
