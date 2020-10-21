@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
   <title>Barber's Chair</title>
 </head>
 
-  <div class="navbar"> 
+<body>
+  <div class="navbarBackground">
+    <div class="navbar"> 
       <div id="navLogo"> 
         <img src="images/logo.jpg" width=100px> 
           Barber's Corner
       </div>
+      
       <div class="navLinks">
         <ul>
           <li>Log In</li>
@@ -19,155 +23,171 @@
           <li>Menu</li>
         </ul>
       </div>
+    </div>
   </div>
 
-  <div class="hero">
-      <div class="heroText">
-        <h1>The Barber's Corner</h1>
-        <h2>Get the cut you need</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores magnam laboriosam ad exercitationem, illum omnis.</p>
+    <div class="slideshowBackground">
+      <div class="slideshow">
+          <div id="left-button">
+            <button> < </button>
+          </div>
+
+          <div class="slideShowMain">
+            <img src="images/neonBarber.jpg">
+          </div>
+          
+          <div id="right-button">
+            <button> > </button>
+          </div>
       </div>
-      <div class="heroImage">
-        <img src="images/chairs.jpg">
-      </div>
-  </div>
-
-  <div class="title1Title">Welcome To The Shop</div>
-
-  <div class="title1">
-      <div class="heroImage">
-          <img src="images/neonBarber.jpg">
-      </div>
-
-      <div class="title1Text">
-          <h1>The best Barbers in town</h1>
-          <h2>Just one click away</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, animi! Aperiam dolorem neque facere voluptatem eum voluptates, tempora fuga vero nam minima corrupti et odio omnis itaque reiciendis nemo nulla soluta numquam fugiat suscipit iure.</p>
-      </div>
-  </div>
-
-  <div class="title2Title">Welcome To The Shop</div>
-
-  <div class="title2">
-      <div class="title2Text">
+    </div>
+    <div class="hero">
+        <div class="heroText">
           <h1>The Barber's Corner</h1>
           <h2>Get the cut you need</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores magnam laboriosam ad exercitationem, illum omnis.</p>
+        </div>
+        <div class="heroImage">
+          <img src="images/chairs.jpg">
+        </div>
+    </div>
+
+    <div class="title1Title">Welcome To The Shop</div>
+
+    <div class="title1">
+        <div class="heroImage">
+            <img src="images/neonBarber.jpg">
+        </div>
+
+        <div class="title1Text">
+            <h1>The best Barbers in town</h1>
+            <h2>Just one click away</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, animi! Aperiam dolorem neque facere voluptatem eum voluptates, tempora fuga vero nam minima corrupti et odio omnis itaque reiciendis nemo nulla soluta numquam fugiat suscipit iure.</p>
+        </div>
+    </div>
+
+    <div class="title2Title">Welcome To The Shop</div>
+
+    <div class="title2">
+        <div class="title2Text">
+            <h1>The Barber's Corner</h1>
+            <h2>Get the cut you need</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores magnam laboriosam ad exercitationem, illum omnis.</p>
+        </div>
+        <div class="title2Image">
+            <img src="images/barbersChair.jpg">
+        </div>
+    </div>
+
+    <div class="ourTeam">Our Team of Experts</div>
+
+    <div class="threeCards">
+      
+      <div id="adam">
+        <h1>Adam</h1>
+        <img src="images/adam.jpg">
+        <p>Hair Care Specialist</p><br>
+        <button id="adamButton">Lets Talk Hair Care</button>
+          <form id="myDIV">
+            <label for="fname">Full Name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="phone">Phone #</label><br>
+            <input type="text" id="phone" name="phone"><br>
+            <label for="email">E-Mail address</label><br>
+            <input type="text" id="email" name="email"><br><br>
+            <button id="adamSubmit">Submit</button>
+          </form> 
       </div>
-      <div class="title2Image">
-          <img src="images/barbersChair.jpg">
-      </div>
-  </div>
 
-
-  <div class="ourTeam">Our Team of Experts</div>
-
-  <div class="threeCards">
-    
-    <div id="adam">
-      <h1>Adam</h1>
-      <img src="images/adam.jpg">
-      <p>Hair Care Specialist</p><br>
-      <button id="adamButton">Lets Talk Hair Care</button>
-        <form id="myDIV">
+      <div id="daniel">
+        <h1>Daniel</h1>
+        <img src="images/daniel.jpg">
+        <p>Lead Stylist</p><br>
+        <button id="danielButton" onclick="myFunction1()">Lets Talk Style</button>
+        <form id="myDIV1">
           <label for="fname">Full Name:</label><br>
           <input type="text" id="fname" name="fname"><br>
           <label for="phone">Phone #</label><br>
           <input type="text" id="phone" name="phone"><br>
           <label for="email">E-Mail address</label><br>
           <input type="text" id="email" name="email"><br><br>
-          <button id="adamSubmit">Submit</button>
+          <button id="danielSubmit">Submit</button>
         </form> 
+      </div>
+
+      <div id="abraham">
+        <h1>Abraham</h1>
+        <img src="images/abraham.jpg">
+        <p>Beard Grooming Specialist</p><br>
+        <button id="abrahamButton" onclick="myFunction2()">Lets Talk Beards</button>
+        <form id="myDIV2">
+          <label for="fname">Full Name:</label><br>
+          <input type="text" id="fname" name="fname"><br>
+          <label for="phone">Phone #</label><br>
+          <input type="text" id="phone" name="phone"><br>
+          <label for="email">E-Mail address</label><br>
+          <input type="text" id="email" name="email"><br><br>
+          <button id="abrahamSubmit">Submit</button>
+        </form> 
+      </div>
     </div>
 
-    <div id="daniel">
-      <h1>Daniel</h1>
-      <img src="images/daniel.jpg">
-      <p>Lead Stylist</p><br>
-      <button id="danielButton" onclick="myFunction1()">Lets Talk Style</button>
-      <form id="myDIV1">
-        <label for="fname">Full Name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="phone">Phone #</label><br>
-        <input type="text" id="phone" name="phone"><br>
-        <label for="email">E-Mail address</label><br>
-        <input type="text" id="email" name="email"><br><br>
-        <button id="danielSubmit">Submit</button>
-      </form> 
+    <div class="dropdown">
+        <div class="callToAction">
+          <img src="images/callToAction.jpg">
+          <div class="callToActionText">
+            <h1>Barber's Chair</h1>
+            <button onclick="myFunction()" class="dropbtn">Book Appointment</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">Morning</a>
+              <a href="#">After</a>
+              <a href="#">Evening</a>
+            </div>
+          </div>
+        </div> 
     </div>
 
-    <div id="abraham">
-      <h1>Abraham</h1>
-      <img src="images/abraham.jpg">
-      <p>Beard Grooming Specialist</p><br>
-      <button id="abrahamButton" onclick="myFunction2()">Lets Talk Beards</button>
-      <form id="myDIV2">
-        <label for="fname">Full Name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="phone">Phone #</label><br>
-        <input type="text" id="phone" name="phone"><br>
-        <label for="email">E-Mail address</label><br>
-        <input type="text" id="email" name="email"><br><br>
-        <button id="abrahamSubmit">Submit</button>
-      </form> 
+
+    
+      
+
     </div>
-  </div>
 
-  <div class="callToAction">
-    <img src="images/callToAction.jpg">
-    <div class="callToActionText">
-      <h1>Barber's Chair</h1>
-      <button id="bookAppointment">Book your appointment</button>
+
+
+
+
+
+
+ 
+
+  <footer class="footerSections">
+    <div class="footerSection1">
+      <div id="footerLogo"> 
+        <img src="images/logo.jpg"> 
+        <p>Barber's Corner</p>
+      </div>
     </div>
-  </div> 
-
-
-<body>
-
-<footer>
-  <div class="footerSection1">
-    <div id="footerLogo"> 
-      <img src="images/logo.jpg"> 
-      <p>Barber's Corner</p>
+    <div class="footerSection2">
+      <p>Follow Us</p>
+        <ul>
+          <li>Instagram</li>
+          <li>Facebook</li>
+          <li>Twitter</li>
+        </ul>
     </div>
-  </div>
-  <div class="footerSection2">
-    <p>Follow Us</p>
+    <div class="footerSection3">
+      <p>Services</p>
       <ul>
-        <li>Instagram</li>
-        <li>Facebook</li>
-        <li>Twitter</li>
+        <li>Private Home Service</li>
+        <li>Monthly Hair Package</li>
+        <li>Apparel Store</li>
       </ul>
-  </div>
-  <div class="footerSection3">
-    <p>Services</p>
-    <ul>
-      <li>Private Home Service</li>
-      <li>Monthly Hair Package</li>
-      <li>Apparel Store</li>
-    </ul>
-  </div>
-</footer>
+    </div>
+    <br>
+  </footer>
 
 
-
-
-
-
-<!-- ---------------- -->
-
-<!-- DROPDOWN MENU -->
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-
-
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
