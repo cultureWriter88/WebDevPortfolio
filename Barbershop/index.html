@@ -9,22 +9,23 @@
 </head>
 
 <body>
-  <div class="navbarBackground">
-    <div class="navbar"> 
-      <div id="navLogo"> 
-        <img src="images/logo.jpg" width=100px> 
-          Barber's Corner
-      </div>
-      
-      <div class="navLinks">
-        <ul>
-          <li>Log In</li>
-          <li>Store</li>
-          <li>Menu</li>
-        </ul>
+    <div class="navbarBackground">
+      <div class="navbar"> 
+        <div id="navLogo"> 
+          <img src="images/logo.jpg" width=100px> 
+            Barber's Corner
+        </div>
+        
+        <div class="dropdown">          
+          <span>Mouse over ME!</span>
+              <ul>
+                <li class="dropbtn2">Log In</li>
+                <li>Store</li>
+                <li>Menu</li>
+              </ul>
+        </div>
       </div>
     </div>
-  </div>
 
     <div class="slideshowBackground">
       <div class="slideshow">
@@ -133,20 +134,21 @@
     </div>
 
     <div class="dropdown">
-        <div class="callToAction">
-          <img src="images/callToAction.jpg">
-          <div class="callToActionText">
-            <h1>Barber's Chair</h1>
-            <button onclick="myFunction()" class="dropbtn">Book Appointment</button>
-            <div id="myDropdown" class="dropdown-content">
-              <a href="#">Morning</a>
-              <a href="#">After</a>
-              <a href="#">Evening</a>
-            </div>
+      <div class="callToAction">
+        <img src="images/callToAction.jpg">
+        <div class="callToActionText">
+          <h1>Barber's Chair</h1>
+          <button onclick="myFunction()" class="dropbtn">Book Appointment</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Morning</a>
+            <a href="#">After</a>
+            <a href="#">Evening</a>
           </div>
-        </div> 
+        </div>
+      </div> 
     </div>
-    
+
+<script src="script.js"></script>
 </body>
 
 <footer class="footerSections">
@@ -175,5 +177,4 @@
 </footer>
 
 
-<script src="script.js"></script>
 </html>

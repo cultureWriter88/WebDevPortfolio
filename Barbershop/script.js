@@ -1,3 +1,26 @@
+
+//JUST TESTING SOME API STUFF
+
+// const getPokemonData = function(pokemon) {
+//   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+//     .then(function (response) {
+//       console.log(response);
+//       return response.json();
+//       })
+//     .then(function(data){
+//       console.log(data);
+//       renderPokemon(data[0]);
+//     });
+// };
+// getPokemonData('charmeleon');
+
+
+
+
+// Intro Pop Up On Page
+let pageIntro = 'pageIntro';
+if (pageIntro === 'pageIntro') alert('Welcome To The Shop');
+
 //Slideshow
 
 
