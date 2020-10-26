@@ -1,18 +1,19 @@
 
-//JUST TESTING SOME API STUFF
+// JUST TESTING SOME API STUFF
 
-// const getPokemonData = function(pokemon) {
-//   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-//     .then(function (response) {
-//       console.log(response);
-//       return response.json();
-//       })
-//     .then(function(data){
-//       console.log(data);
-//       renderPokemon(data[0]);
-//     });
-// };
-// getPokemonData('charmeleon');
+const getPokemonData = function(pokemon) {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+    .then(function (response) {
+      console.log(response);
+      return response.json();
+      })
+    .then(function(data){
+      console.log(data);
+      renderPokemon(data[0]);
+    });
+};
+getPokemonData('charmeleon');
+console.log(getPokemonData('charmeleon'));
 
 
 
