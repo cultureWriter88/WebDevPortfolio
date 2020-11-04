@@ -1,0 +1,42 @@
+* {
+   background-repeat: no-repeat;
+    font-family: 'Courier New', Courier, monospace;
+    grid-gap: 1em;
+    border-color: black;
+    margin: .5em;
+}
+
+.inputForm{
+    background-color: purple;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    background-image: url(https://i.imgur.com/CgKDPlb.gif);
+    text-align: center;
+}
+
+.inputForm {
+    display: grid;
+    grid-template-columns:1fr ;
+
+}
+
+.incomeContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+    
+.taxesContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 975px) {
+    .incomeContainer, .taxesContainer{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
