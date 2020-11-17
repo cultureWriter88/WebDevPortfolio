@@ -60,29 +60,22 @@ let fifthSinglesBracket = .32;
 let sixthSinglesBracket = .37;
 
  if (grossInputSalary >= 1 && grossInputSalary <= 9875) {
-  document.getElementById("firstBracketTaxes").innerHTML = "$" + parseInt(grossInputSalary * firstSinglesBracket);
- } else if (grossInputSalary >= 9876 && grossInputSalary <= 40125) {
+  let first = document.getElementById("firstBracketTaxes").innerHTML = "$" + parseInt(grossInputSalary * firstSinglesBracket);
+} else if (grossInputSalary >= 9876 && grossInputSalary <= 40125) {
   document.getElementById("secondBracketTaxes").innerHTML = "$" + parseInt(((grossInputSalary - firstBracketMax) * secondSinglesBracket) + (firstBracketMax * firstSinglesBracket));
- } else if (grossInputSalary >= 40126 && grossInputSalary <= 85525 ){
+} else if (grossInputSalary >= 40126 && grossInputSalary <= 85525 ){
+  document.getElementById("thirdBracketTaxes").innerHTML = "$" + parseInt(( (grossInputSalary - secondBracketMax) * thirdSinglesBracket) + (firstBracketMax * firstSinglesBracket) + (secondBracketMax * secondSinglesBracket));
+ 
+
+
+
+
+} else if (grossInputSalary >= 85526 && grossInputSalary <= 163300) {
+  document.getElementById("thirdBracketTaxes").innerHTML = "$" + parseInt(( (grossInputSalary - thirdBracketMax) * fourthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + (secondBracketMax * secondSinglesBracket) + (thirdBracketMax * thirdSinglesBracket));
+
+
+
   
-  
-  
-  document.getElementById("thirdBracketTaxes").innerHTML = "$" + parseInt((((grossInputSalary - firstBracketMax) - secondBracketMax) * thirdSinglesBracket) + (firstBracketMax * firstSinglesBracket) + (secondBracketMax * secondSinglesBracket));
-
-
-
-
-
-
-
-
-
-
-
-
-
- } else if (grossInputSalary >= 85526 && grossInputSalary <= 163300) {
-  document.getElementById("fourthBracketTaxes").innerHTML = "$" + parseInt((grossInputSalary - secondBracketMax) -  secondSinglesBracket + firstBracketMax);
 
  } else if (grossInputSalary >= 163301 && grossInputSalary <= 207350) {
   console.log("Greater than or equal to $163,301 less than $207,350");
