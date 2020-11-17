@@ -14,19 +14,14 @@ function money() {
   document.querySelector("html").style.backgroundColor="red";
 
   let grossInputSalary = document.getElementById("myText").value;
-
   let netIncome = document.getElementById("demo").innerHTML = "$" + parseInt((grossInputSalary *.5725221439));
-
   let monthlyNet = document.getElementById("monthlyNet").innerHTML = "$" + parseInt((grossInputSalary *.5725221439)/12);
-
   let biweeklyNet = document.getElementById("biweeklyNet").innerHTML = "$" + parseInt(((grossInputSalary *.5725221439)/12)/2);
 
 
 // TAXES
   let federalTax = document.getElementById("federalTaxes").innerHTML = "$" + parseInt((grossInputSalary * .22));
-
   let stateTax = document.getElementById("stateTaxes").innerHTML = "$" + parseInt((grossInputSalary * .08875));
-
   let localTax = document.getElementById("localTaxes").innerHTML = "$" + parseInt((grossInputSalary * .03876));
 
 
@@ -50,46 +45,41 @@ let thirdBracketMax = 85525;
 let fourthBracketMax = 163300;
 let fifthBracketMax = 207350;
 let sixthBracketMax = 518400;
-let seventhBracketMax = 85525;
+let seventhBracketMax = 999999;
 
 let firstSinglesBracket = .10;
 let secondSinglesBracket = .12;
 let thirdSinglesBracket = .22;
 let fourthSinglesBracket = .24;
 let fifthSinglesBracket = .32;
-let sixthSinglesBracket = .37;
+let sixthSinglesBracket = .35;
+let seventhSinglesBracket = .37;
+
 
  if (grossInputSalary >= 1 && grossInputSalary <= 9875) {
-  let first = document.getElementById("firstBracketTaxes").innerHTML = "$" + parseInt(grossInputSalary * firstSinglesBracket);
+  let firstBracketTotal = document.getElementById("firstBracketTaxes").innerHTML = "$" + parseInt(grossInputSalary * firstSinglesBracket);
+
 } else if (grossInputSalary >= 9876 && grossInputSalary <= 40125) {
-  document.getElementById("secondBracketTaxes").innerHTML = "$" + parseInt(((grossInputSalary - firstBracketMax) * secondSinglesBracket) + (firstBracketMax * firstSinglesBracket));
+  let secondBracketTotal = document.getElementById("secondBracketTaxes").innerHTML = "$" + parseInt(((grossInputSalary - firstBracketMax) * secondSinglesBracket) + (firstBracketMax * firstSinglesBracket));
+
 } else if (grossInputSalary >= 40126 && grossInputSalary <= 85525 ){
-  document.getElementById("thirdBracketTaxes").innerHTML = "$" + parseInt(( (grossInputSalary - secondBracketMax) * thirdSinglesBracket) + (firstBracketMax * firstSinglesBracket) + (secondBracketMax * secondSinglesBracket));
+  let thirddBracketTotal = document.getElementById("thirdBracketTaxes").innerHTML = "$" + parseInt(( (grossInputSalary - secondBracketMax) * thirdSinglesBracket) + ((firstBracketMax  * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket)));
  
-
-
-
-
 } else if (grossInputSalary >= 85526 && grossInputSalary <= 163300) {
-  document.getElementById("thirdBracketTaxes").innerHTML = "$" + parseInt(( (grossInputSalary - thirdBracketMax) * fourthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + (secondBracketMax * secondSinglesBracket) + (thirdBracketMax * thirdSinglesBracket));
-
-
-
-  
+  let fourthBracketTotal = document.getElementById("fourthBracketTaxes").innerHTML = "$" + parseInt(  ((grossInputSalary - thirdBracketMax) * fourthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket)); 
 
  } else if (grossInputSalary >= 163301 && grossInputSalary <= 207350) {
-  console.log("Greater than or equal to $163,301 less than $207,350");
+  let fifthBracketTotal = document.getElementById("fifthBracketTaxes").innerHTML = "$" + parseInt(  ((grossInputSalary - fourthBracketMax) * fifthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket)); 
+
  } else if (grossInputSalary >= 207351 && grossInputSalary <= 518400) {
-  console.log("Greater than or equal to $207,351 less than $518,400");
+  let sixthBracketTotal = document.getElementById("sixthBracketTaxes").innerHTML = "$" + parseInt(  ((grossInputSalary - fifthBracketMax) * sixthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket) + ((fifthBracketMax - fourthBracketMax) * fifthSinglesBracket)); 
+
  } else if (grossInputSalary >= 518401) {
-  console.log("Greater than or equal to $518,401");
- } else {
-   console.log("Please input Gross Income")
+  let seventhBracketTotal = document.getElementById("seventhBracketTaxes").innerHTML = "$" + parseInt(  ((grossInputSalary - sixthBracketMax) * seventhSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket) + ((fifthBracketMax - fourthBracketMax) * fifthSinglesBracket) + ((sixthBracketMax - fifthBracketMax) * sixthSinglesBracket)); 
+
+} else {
+   alert("Enter your gross Income ( No commas or signs )");
  }
-
-
-
-
 
   event.preventDefault();
 }

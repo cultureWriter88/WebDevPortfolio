@@ -36,9 +36,17 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+
+
 @media screen and (max-width: 975px) {
     .incomeContainer, .taxesContainer, .retirementContainer, .singleFilerContainer{
         display: grid;
         grid-template-columns: 1fr;
     }
+}
+
+
+.taxBracketContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
