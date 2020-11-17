@@ -43,6 +43,15 @@ function money() {
 
 
 // EDITABLE TAX TIME TABLE
+
+let firstBracketMax = 9875;
+let secondBracketMax = 40125;
+let thirdBracketMax = 85525;
+let fourthBracketMax = 163300;
+let fifthBracketMax = 207350;
+let sixthBracketMax = 518400;
+let seventhBracketMax = 85525;
+
 let firstSinglesBracket = .10;
 let secondSinglesBracket = .12;
 let thirdSinglesBracket = .22;
@@ -51,16 +60,30 @@ let fifthSinglesBracket = .32;
 let sixthSinglesBracket = .37;
 
  if (grossInputSalary >= 1 && grossInputSalary <= 9875) {
-  let firstBracketTotal = grossInputSalary * firstSinglesBracket
-  console.log(firstBracketTotal); //PRINTS 10% of income between 0 and 9875
+  document.getElementById("firstBracketTaxes").innerHTML = "$" + parseInt(grossInputSalary * firstSinglesBracket);
  } else if (grossInputSalary >= 9876 && grossInputSalary <= 40125) {
-  let secondBracketTotal = ((grossInputSalary - 9875) * (secondSinglesBracket) + 9875);
-  console.log(secondBracketTotal);
-
+  document.getElementById("secondBracketTaxes").innerHTML = "$" + parseInt(((grossInputSalary - firstBracketMax) * secondSinglesBracket) + (firstBracketMax * firstSinglesBracket));
  } else if (grossInputSalary >= 40126 && grossInputSalary <= 85525 ){
-    console.log("Greater than or equal to $40,126 less than $85,525");
+  
+  
+  
+  document.getElementById("thirdBracketTaxes").innerHTML = "$" + parseInt((((grossInputSalary - firstBracketMax) - secondBracketMax) * thirdSinglesBracket) + (firstBracketMax * firstSinglesBracket) + (secondBracketMax * secondSinglesBracket));
+
+
+
+
+
+
+
+
+
+
+
+
+
  } else if (grossInputSalary >= 85526 && grossInputSalary <= 163300) {
-  console.log("Greater than or equal to $85,526 less than $163,300");
+  document.getElementById("fourthBracketTaxes").innerHTML = "$" + parseInt((grossInputSalary - secondBracketMax) -  secondSinglesBracket + firstBracketMax);
+
  } else if (grossInputSalary >= 163301 && grossInputSalary <= 207350) {
   console.log("Greater than or equal to $163,301 less than $207,350");
  } else if (grossInputSalary >= 207351 && grossInputSalary <= 518400) {
