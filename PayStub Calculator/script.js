@@ -11,7 +11,7 @@ submitButton.addEventListener("click", money);
 function money() {
 
   // INCOME
-  document.querySelector("html").style.backgroundColor="red";
+  document.querySelector("html").style.backgroundColor="violet";
 
   let grossInputSalary = document.getElementById("myText").value;
   let netIncome = document.getElementById("demo").innerHTML = "$" + parseInt((grossInputSalary *.5725221439));
