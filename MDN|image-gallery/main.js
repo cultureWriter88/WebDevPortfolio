@@ -11,7 +11,7 @@ for (let i = 1; i < 6;i++){
   thumbBar.appendChild(newImage);
 
   //Here I am working on making main image on 
-  newImage.onclick = overlay.src =  "images/pic + i + .jpg";
+  newImage.onclick = overlay.src =  "images/pic3.jpg";
   console.log(newImage);
 
 }
