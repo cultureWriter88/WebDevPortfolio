@@ -17,5 +17,6 @@ for (let i = 1; i < 6; i++){
 }
 /* Wiring up the Darken/Lighten button */
 btn.onclick = function(){
-  btn.getAttribute("dark", "light");
+  btn.setAttribute("dark", "light");
+  console.log("change")
 }
