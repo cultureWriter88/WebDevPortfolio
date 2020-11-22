@@ -5,7 +5,6 @@ const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
 /* Looping through images */
-<<<<<<< HEAD
 for (let i = 1; i <= 5; i++){
   const newImage = document.createElement('img');
   newImage.setAttribute("src", "images/pic" + i + ".jpg");
@@ -27,7 +26,6 @@ btn.onclick = function(){
           btn.textContent="Darken";
           overlay.style.backgroundColor= "rgba(0, 0, 0, 0)";
       }
-=======
 for (let i = 1; i < 6; i++){
   const newImage = document.createElement('img');
   newImage.setAttribute("src", "images/pic" + i + ".jpg");
@@ -42,6 +40,5 @@ for (let i = 1; i < 6; i++){
 btn.onclick = function(){
   btn.setAttribute("dark", "light");
   console.log("change")
->>>>>>> a38e691b1ee74390a682346557984cc2fbdb791f
 }
 
