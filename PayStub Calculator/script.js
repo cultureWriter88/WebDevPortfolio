@@ -24,9 +24,6 @@ function money() {
   let stateTax = document.getElementById("stateTaxes").innerHTML = "$" + parseInt((grossInputSalary * .08875));
   let localTax = document.getElementById("localTaxes").innerHTML = "$" + parseInt((grossInputSalary * .03876));
 
-
-
-
 // FEDERAL TAX BRACKETS - Single Filers
 // firstSingleBracket = 10% of $0 to $9,875
 // 12% - $9,876 to $40,125
@@ -36,9 +33,7 @@ function money() {
 // 35% - $207,351 to $518,400
 // 37% - $518,401 or more
 
-
 // EDITABLE TAX TIME TABLE
-
 let firstBracketMax = 9875;
 let secondBracketMax = 40125;
 let thirdBracketMax = 85525;
@@ -69,7 +64,7 @@ let seventhSinglesBracket = .37;
   let fourthBracketTotal = document.getElementById("fourthBracketTaxes").innerHTML = "$" + parseInt(  ((grossInputSalary - thirdBracketMax) * fourthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket)); 
 
  } else if (grossInputSalary >= 163301 && grossInputSalary <= 207350) {
-  let fifthBracketTotal = document.getElementById("fifthBracketTaxes").innerHTML = "$" + parseInt(  ((grossInputSalary - fourthBracketMax) * fifthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket)); 
+  let fifthBracketTotal = document.getElementById("fifthBracketTaxes").innerHTML = "$" + parseInt(  ((grossInputSalary - fourthBracketMax) * fifthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket));
 
  } else if (grossInputSalary >= 207351 && grossInputSalary <= 518400) {
   let sixthBracketTotal = document.getElementById("sixthBracketTaxes").innerHTML = "$" + parseInt(  ((grossInputSalary - fifthBracketMax) * sixthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket) + ((fifthBracketMax - fourthBracketMax) * fifthSinglesBracket)); 
@@ -84,3 +79,29 @@ let seventhSinglesBracket = .37;
   event.preventDefault();
 }
 
+
+
+
+// DropDown animation
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+
+      }
+    }
+  }
+}
+preventDefault();
