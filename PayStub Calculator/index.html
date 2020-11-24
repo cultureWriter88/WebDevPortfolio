@@ -9,74 +9,82 @@
     </head>
 
     <body>
-        <form class="inputForm">
+        <form class="inputForm"></form>
 
 
 
-            <div>
-                <input class="grossIncome" id="myText" type="text"  placeholder="Gross Income Here">            
-                
-                <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                        <div id="myDropdown" class="dropdown-content">
-                                <a href="al">Alabama</a>
-                                <a href="ak">Alaska</a>
-                                <a href="az">Arizona</a>
-                                <a href="al">Arkansas</a>
-                                <a href="ca">California</a>
-                                <a href="co">Colorado</a>
-                                <a href="ct">Connecticut</a>
-                                <a href="de">Delaware</a>
-                                <a href="fl">Florida</a>
-                                <a href="ga">Georgia</a>
-                                <a href="hi">Hawaii</a>
-                                <a href="id">Idaho</a>
-                                <a href="il">Illinois</a>
-                                <a href="in">Indiana</a>
-                                <a href="ia">Iowa</a>
-                                <a href="ks">Kansas</a>
-                                <a href="ky">Kentucky</a>
-                                <a href="la">Louisiana</a>
-                                <a href="me">Maine</a>
-                                <a href="md">Maryland</a>
-                                <a href="ma">Massachusetts</a>
-                                <a href="mi">Michigan</a>
-                                <a href="mn">Minnesota</a>
-                                <a href="ms">Mississippi</a>
-                                <a href="mo">Missouri</a>
-                                <a href="mt">Montana</a>
-                                <a href="ne">Nebraska</a>
-                                <a href="nv">Nevada</a>
-                                <a href="nh">New Hampshire</a>
-                                <a href="nj">New Jersey</a>
-                                <a href="nm">New Mexico</a>
-                                <a href="ny">New York</a>
-                                <a href="nc">North Carolina</a>
-                                <a href="nd">North Dakota</a>
-                                <a href="oh">Ohio</a>
-                                <a href="ok">Oklahoma</a>
-                                <a href="or">Oregon</a>
-                                <a href="pa">Pennsylvania</a>
-                                <a href="ri">Rhode Island</a>
-                                <a href="sc">South Carolina</a>
-                                <a href="sd">South Dakota</a>
-                                <a href="tn">Tennessee</a>
-                                <a href="tx">Texas</a>
-                                <a href="ut">Utah</a>
-                                <a href="vt">Vermont</a>
-                                <a href="va">Virginia</a>
-                                <a href="wa">Washington</a>
-                                <a href="wv">West Virginia</a>
-                                <a href="wi">Wisconsin</a>
-                                <a href="wy">Wyoming</a>
-                            </div>
-                    </div>
+        <div>
+            <input class="grossIncome" id="myText" type="text"  placeholder="Gross Income Here">
+            <input class="grossIncome" id="myState" type="text"  placeholder="State Name or Initials">
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="ny">New York</a>
 
-                    <button class="maritalstatus">Marital Status</button>
+                    <a href="al">Alabama</a>
+                    <a href="ak">Alaska</a>
+                    <a href="az">Arizona</a>
+                    <a href="al">Arkansas</a>
+                    <a href="ca">California</a>
+                    <a href="co">Colorado</a>
+                    <a href="ct">Connecticut</a>
+                    <a href="de">Delaware</a>
+                    <a href="fl">Florida</a>
+                    <a href="ga">Georgia</a>
+                    <a href="hi">Hawaii</a>
+                    <a href="id">Idaho</a>
+                    <a href="il">Illinois</a>
+                    <a href="in">Indiana</a>
+                    <a href="ia">Iowa</a>
+                    <a href="ks">Kansas</a>
+                    <a href="ky">Kentucky</a>
+                    <a href="la">Louisiana</a>
+                    <a href="me">Maine</a>
+                    <a href="md">Maryland</a>
+                    <a href="ma">Massachusetts</a>
+                    <a href="mi">Michigan</a>
+                    <a href="mn">Minnesota</a>
+                    <a href="ms">Mississippi</a>
+                    <a href="mo">Missouri</a>
+                    <a href="mt">Montana</a>
+                    <a href="ne">Nebraska</a>
+                    <a href="nv">Nevada</a>
+                    <a href="nh">New Hampshire</a>
+                    <a href="nj">New Jersey</a>
+                    <a href="nm">New Mexico</a>
+                    <a href="nc">North Carolina</a>
+                    <a href="nd">North Dakota</a>
+                    <a href="oh">Ohio</a>
+                    <a href="ok">Oklahoma</a>
+                    <a href="or">Oregon</a>
+                    <a href="pa">Pennsylvania</a>
+                    <a href="ri">Rhode Island</a>
+                    <a href="sc">South Carolina</a>
+                    <a href="sd">South Dakota</a>
+                    <a href="tn">Tennessee</a>
+                    <a href="tx">Texas</a>
+                    <a href="ut">Utah</a>
+                    <a href="vt">Vermont</a>
+                    <a href="va">Virginia</a>
+                    <a href="wa">Washington</a>
+                    <a href="wv">West Virginia</a>
+                    <a href="wi">Wisconsin</a>
+                    <a href="wy">Wyoming</a>
                 </div>
-            </input>
+              </div>
+
+
+
+
+                <div class="dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        
+                    </div>
+                </div>
+
                 <button class="submitButton" type="submit">Submit</button>
-            </div>
+        </div>
         </form>
         
         <div class="incomeContainer">
@@ -130,42 +138,7 @@
             </div>
         </div>
 
-        <div class="taxBracketContainer">
-            <div class="firstBracket">
-                <h2>First Bracket</h2>
-                <h3 id="firstBracketTaxes">1st Bracket</h3>
-            </div>
 
-            <div class="secondBracket">
-                <h2>Second Bracket</h2>
-                <h3 id="secondBracketTaxes">2nd Bracket</h3>
-            </div>
-
-            <div class="thirdBracket">
-                <h2>Third Bracket</h2>
-                <h3 id="thirdBracketTaxes">3rd Bracket</h3>
-            </div>
-
-            <div class="fourthBracket">
-                <h2>Fourth Bracket</h2>
-                <h3 id="fourthBracketTaxes">4th Bracket</h3>
-            </div>
-
-            <div class="fifthBracket">
-                <h2>Fifth Bracket</h2>
-                <h3 id="fifthBracketTaxes">5th Bracket</h3>
-            </div>
-
-            <div class="sixthBracket">
-                <h2>Sixth Bracket</h2>
-                <h3 id="sixthBracketTaxes">6th Bracket</h3>
-            </div>
-
-            <div class="seventhBracket">
-                <h2>Seventh Bracket</h2>
-                <h3 id="seventhBracketTaxes">7th Bracket</h3>
-            </div>
-        </div>
 
         <script src="script.js"></script>
     </body>
