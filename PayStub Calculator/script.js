@@ -1,19 +1,21 @@
+const submitButton = document.querySelector(".submitButton");
 const grossInputSalary = document.getElementById("myText").value;
 
-let grossIncome = document.querySelector(".grossIncome").innerHTML.value;
-let submitButton = document.querySelector(".submitButton");
-let netIncome = document.querySelector(".netIncome");
-let yourNetIncome = netIncome;
 
-const federalTaxes = document.getElementById("federalTaxes");
-const stateTaxes = document.getElementById("stateTaxes");
-const localTaxes = document.getElementById("localTaxes");
+// const federalTaxes = document.getElementById("federalTaxes");
+// const stateTaxes = document.getElementById("stateTaxes");
+// const localTaxes = document.getElementById("localTaxes");
+// const inputState = document.getElementById("myState").value;
 
 submitButton.addEventListener("click", money);
 
 
 
 function money() {
+
+  // CONTROLLERS 
+  const inputState = document.getElementById("myState").value;
+
 
   // INCOME - First Row
   document.querySelector("html").style.backgroundColor="violet";
@@ -39,33 +41,31 @@ function money() {
   let sixthSinglesBracket = 0.35;
   let seventhSinglesBracket = 0.37;
 
-
- if (grossInputSalary >= 1 && grossInputSalary <= 9875) {
-  federalTaxes.innerHTML = "$" + parseInt(grossInputSalary * firstSinglesBracket);
-
-} else if (grossInputSalary >= 9876 && grossInputSalary <= 40125) {
-  federalTaxes.innerHTML = "$" + parseInt(((grossInputSalary - firstBracketMax) * secondSinglesBracket) + (firstBracketMax * firstSinglesBracket));
-
-} else if (grossInputSalary >= 40126 && grossInputSalary <= 85525 ){
-  federalTaxes.innerHTML = "$" + parseInt(( (grossInputSalary - secondBracketMax) * thirdSinglesBracket) + ((firstBracketMax  * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket)));
- 
-} else if (grossInputSalary >= 85526 && grossInputSalary <= 163300) {
-  federalTaxes.innerHTML = "$" + parseInt(  ((grossInputSalary - thirdBracketMax) * fourthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket)); 
-
- } else if (grossInputSalary >= 163301 && grossInputSalary <= 207350) {
-  federalTaxes.innerHTML = "$" + parseInt(  ((grossInputSalary - fourthBracketMax) * fifthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket));
-
- } else if (grossInputSalary >= 207351 && grossInputSalary <= 518400) {
-  federalTaxes.innerHTML = "$" + parseInt(  ((grossInputSalary - fifthBracketMax) * sixthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket) + ((fifthBracketMax - fourthBracketMax) * fifthSinglesBracket)); 
-
- } else if (grossInputSalary >= 518401) {
-  federalTaxes.innerHTML = "$" + parseInt(  ((grossInputSalary - sixthBracketMax) * seventhSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket) + ((fifthBracketMax - fourthBracketMax) * fifthSinglesBracket) + ((sixthBracketMax - fifthBracketMax) * sixthSinglesBracket)); 
-
-  } else {
-   alert("Enter your gross Income ( No commas or signs )");
-  }
+  const federalTaxes = document.getElementById("federalTaxes");
 
 
+   if (grossInputSalary >= 1 && grossInputSalary <= 9875) {
+   federalTaxes.innerHTML = "$" + parseInt(grossInputSalary * firstSinglesBracket);
+
+  } else if (grossInputSalary >= 9876 && grossInputSalary <= 40125) {
+    federalTaxes.innerHTML = "$" + parseInt(((grossInputSalary - firstBracketMax) * secondSinglesBracket) + (firstBracketMax * firstSinglesBracket));
+
+  } else if (grossInputSalary >= 40126 && grossInputSalary <= 85525 ){
+    federalTaxes.innerHTML = "$" + parseInt(( (grossInputSalary - secondBracketMax) * thirdSinglesBracket) + ((firstBracketMax  * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket)));
+
+  } else if (grossInputSalary >= 85526 && grossInputSalary <= 163300) {
+    federalTaxes.innerHTML = "$" + parseInt(  ((grossInputSalary - thirdBracketMax) * fourthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket)); 
+
+  } else if (grossInputSalary >= 163301 && grossInputSalary <= 207350) {
+    federalTaxes.innerHTML = "$" + parseInt(  ((grossInputSalary - fourthBracketMax) * fifthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket));
+
+  } else if (grossInputSalary >= 207351 && grossInputSalary <= 518400) {
+    federalTaxes.innerHTML = "$" + parseInt(  ((grossInputSalary - fifthBracketMax) * sixthSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket) + ((fifthBracketMax - fourthBracketMax) * fifthSinglesBracket)); 
+
+  } else if (grossInputSalary >= 518401) {
+    federalTaxes.innerHTML = "$" + parseInt(  ((grossInputSalary - sixthBracketMax) * seventhSinglesBracket) + (firstBracketMax * firstSinglesBracket) + ((secondBracketMax - firstBracketMax) * secondSinglesBracket) +  ((thirdBracketMax - secondBracketMax) * thirdSinglesBracket) + ((fourthBracketMax - thirdBracketMax) * fourthSinglesBracket) + ((fifthBracketMax - fourthBracketMax) * fifthSinglesBracket) + ((sixthBracketMax - fifthBracketMax) * sixthSinglesBracket)); 
+
+  } 
 
  
   // NEW YORK - STATE TAX BRACKETS
@@ -86,7 +86,9 @@ function money() {
   let seventhSinglesNYBracket = 0.0685;
   let eighthSinglesNYBracket = 0.0882;
 
-  let inputState = document.getElementById("myState").value;
+
+  const stateTaxes = document.getElementById("stateTaxes");
+
 
   if(inputState === "ny" || inputState === "new york"){
     
@@ -114,14 +116,9 @@ function money() {
      } else if (grossInputSalary >= 1077551) {
       stateTaxes.innerHTML = "$" + parseInt(  ((grossInputSalary - seventhNYBracketMax) * eighthSinglesNYBracket) + (firstNYBracketMax * firstSinglesNYBracket) + ((secondNYBracketMax - firstNYBracketMax) * secondSinglesNYBracket) +  ((thirdNYBracketMax - secondNYBracketMax) * thirdSinglesNYBracket) + ((fourthNYBracketMax - thirdNYBracketMax) * fourthSinglesNYBracket) + ((fifthNYBracketMax - fourthNYBracketMax) * fifthSinglesNYBracket) + ((sixthNYBracketMax - fifthNYBracketMax) * sixthSinglesNYBracket) + ((seventhNYBracketMax - sixthNYBracketMax) * seventhSinglesNYBracket)); 
     } else {
-      alert("Enter your gross Income ( No commas or signs )");
+      alert("Please enter State Name or State Initials");
     }
-
-
-  } else {
-    alert("Enter State Name or State Initials");
-  }
-
+  } 
 
 
 
@@ -139,9 +136,9 @@ function money() {
   let thirdSinglesNYCBracket = 0.03819;
   let fourthSinglesNYCBracket = 0.03867;
 
-  if(inputState === "ny" || inputState === "nyc" || inputState === "new york" || inputState === "new york city"){
+  let localTaxes = document.getElementById("localTaxes");
 
-    localTaxes.innerHTML = "$" + parseInt((grossInputSalary * firstSinglesNYCBracket));
+  if(inputState === "ny" || inputState === "nyc" || inputState === "new york" || inputState === "new york city"){
 
       if (grossInputSalary >= 1 && grossInputSalary <= 12000) {
         localTaxes.innerHTML = "$" + parseInt(grossInputSalary * firstSinglesNYCBracket);
@@ -154,13 +151,14 @@ function money() {
       
       } else if (grossInputSalary > 50001) {
         localTaxes.innerHTML = "$" + parseInt(  ((grossInputSalary - thirdNYCBracketMax) * fourthSinglesNYCBracket) + (firstNYCBracketMax * firstSinglesNYCBracket) + ((secondNYCBracketMax - firstNYCBracketMax) * secondSinglesNYCBracket) +  ((thirdNYCBracketMax - secondNYCBracketMax) * thirdSinglesNYCBracket)); 
-        
       } else {
         localTaxes.innerHTML = "No Local Tax";
       }
-    
+      return localTaxes.innerHTML;
+  } else{
+    alert("ENTER STATE");  
   }
-
+  // fixed ^
 
 
 
