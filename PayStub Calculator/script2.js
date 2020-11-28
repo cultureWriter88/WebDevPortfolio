@@ -4,6 +4,9 @@ let inputState = document.getElementById("myState").value;
 submitButton.addEventListener("click", federal);
 submitButton.addEventListener("click", state);
 submitButton.addEventListener("click", local);
+submitButton.addEventListener("click", socialSecurity);
+submitButton.addEventListener("click", medicare);
+submitButton.addEventListener("click", netIncome);
 
 
 // FEDERAL - TAX BRACKETS
@@ -163,12 +166,31 @@ function local() {
     }
 }
 
+// SOCIAL SECURITY - TAX BRACKETS
+function socialSecurity() {
+  let grossInputSalary = document.getElementById("myText").value;
+  document.getElementById("socialSecurity").innerHTML = "$" + parseInt(grossInputSalary * 0.062);
+
+}
+
+function medicare() {
+  let grossInputSalary = document.getElementById("myText").value;
+  document.getElementById("medicare").innerHTML = "$" + parseInt(grossInputSalary * 0.0145);
+}
+
+
+
+
+// Work on building out the Net Income by removing $ sign from number and calculating
+// grossInput - (federalTax+stateTax+localTax) 
+function netIncome() {
+  let grossInputSalary = document.getElementById("myText").value;
+  document.getElementById("yearlyNet").innerHTML = "$" + parseInt(grossInputSalary - 10000); /*THIS LINE WORKS SO FAR, JUST WORK ON THE VARIABLES YOU WILL REMOVE FROM grossIncome */
+}
 
 
 
 
 // document.getElementById("biweeklyNet").innerHTML = "$" + parseInt((grossInputSalary * 2);
-
 // // FEDERAL TAX BRACKET (SINGLE) - Second Row
-
 // console.log(grossInputSalary - federalTaxTotal);
