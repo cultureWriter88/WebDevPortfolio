@@ -1,3 +1,4 @@
 {
-    "terminal.integrated.fontFamily": "Courier"
+    "terminal.integrated.fontFamily": "Courier",
+    "liveServer.settings.CustomBrowser": "chrome:PrivateMode"
 }
