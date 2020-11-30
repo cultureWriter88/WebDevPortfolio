@@ -25,9 +25,16 @@ body {
     grid-template-columns: 1fr ;
 }
 
+.incomeContainer, .taxesContainer, .retirementContainer, .singleFilerContainer{
+  border: solid;
+  border-radius: 1em;
+  margin: 1em;
+}
+
 .incomeContainer, .taxesContainer, .retirementContainer, .singleFilerContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+
 }
     
 .taxesContainer {
@@ -91,4 +98,7 @@ body {
     display: block;
   }
   .dropdown-content a:hover {background-color: #ddd}
-  .show {display:block;}
+  .show {display:block;
+  }
+
+ 
