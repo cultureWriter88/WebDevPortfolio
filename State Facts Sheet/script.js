@@ -29,6 +29,22 @@ function stateInfo(){
       document.getElementById("total-area").innerHTML = "54,556 square miles";
       document.getElementById("state-abbreviation").innerHTML = "NY";
       document.getElementById("name-origin").innerHTML = "17th Century Duke of York";
+    } else if(inputState === "North Carolina"){
+      document.querySelector("html").style.backgroundColor = "coral";
+      document.getElementById("name").innerHTML = "North Carolina";
+      document.getElementById("admitted").innerHTML = "November 21, 1789";
+      document.getElementById("capital").innerHTML = "Raleigh";
+      document.getElementById("total-area").innerHTML = "53,819 square miles";
+      document.getElementById("state-abbreviation").innerHTML = "NC";
+      document.getElementById("name-origin").innerHTML = "King Charles I of England";
+    } else if(inputState === "Ohio"){
+      document.querySelector("html").style.backgroundColor = "pink";
+      document.getElementById("name").innerHTML = "Ohio";
+      document.getElementById("admitted").innerHTML = "March 1, 1803";
+      document.getElementById("capital").innerHTML = "Columbus";
+      document.getElementById("total-area").innerHTML = "44,825  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "OH";
+      document.getElementById("name-origin").innerHTML = " ' Ohiːyo ' Seneca word meaning 'great river', or 'large creek' ";
     } else {
       document.querySelector("html").style.backgroundColor = "green";
     }
