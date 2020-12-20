@@ -5,7 +5,285 @@ submitButton.addEventListener("click", stateInfo);
 
 function stateInfo(){
   let inputState = document.getElementById("input").value;
-    if (inputState === "New Jersey"){
+      if(inputState === "Alabama"){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "Alabama";
+      document.getElementById("admitted").innerHTML = "December 14, 1819 (22nd)";
+      document.getElementById("capital").innerHTML = "Montgomery";
+      document.getElementById("total-area").innerHTML = "52,419 square miles";
+      document.getElementById("state-abbreviation").innerHTML = "AL";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+    } else if(inputState === ""){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "";
+      document.getElementById("admitted").innerHTML = "";
+      document.getElementById("capital").innerHTML = "";
+      document.getElementById("total-area").innerHTML = "  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "";
+      document.getElementById("name-origin").innerHTML = "";
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+    } else if (inputState === "New Jersey"){
       document.querySelector("html").style.backgroundColor = "yellow";
       document.getElementById("name").innerHTML = "New Jersey";
       document.getElementById("admitted").innerHTML = "December 18, 1787";
@@ -85,6 +363,86 @@ function stateInfo(){
       document.getElementById("total-area").innerHTML = "32,020  square miles";
       document.getElementById("state-abbreviation").innerHTML = "SC";
       document.getElementById("name-origin").innerHTML = "named in honor of King Charles I of England, Carolus being Latin for 'Charles' ";
+    } else if(inputState === "South Dakota"){
+      document.querySelector("html").style.backgroundColor = "blue";
+      document.getElementById("name").innerHTML = "South Dakota";
+      document.getElementById("admitted").innerHTML = "November 2, 1889 (40th)";
+      document.getElementById("capital").innerHTML = "Pierre";
+      document.getElementById("total-area").innerHTML = "77,116  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "SD";
+      document.getElementById("name-origin").innerHTML = "Named after Lakota and Dakota Sioux Native American Tribes";
+    } else if(inputState === "Tennessee"){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "Tennessee";
+      document.getElementById("admitted").innerHTML = "June 1, 1796 (16th)";
+      document.getElementById("capital").innerHTML = "Nashville";
+      document.getElementById("total-area").innerHTML = "42,143  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "TN";
+      document.getElementById("name-origin").innerHTML = "Named after a Cherokee village, Tanasi.";
+    } else if(inputState === "Texas"){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "Texas";
+      document.getElementById("admitted").innerHTML = "December 29, 1845 (28th)";
+      document.getElementById("capital").innerHTML = "Austin";
+      document.getElementById("total-area").innerHTML = "268,596 square miles";
+      document.getElementById("state-abbreviation").innerHTML = "TX";
+      document.getElementById("name-origin").innerHTML = "Named after the Caddo Indian word for 'friends' or 'allies' ";
+    } else if(inputState === "Utah"){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "Utah";
+      document.getElementById("admitted").innerHTML = "January 4, 1896 (45th)";
+      document.getElementById("capital").innerHTML = "Salt Lake City";
+      document.getElementById("total-area").innerHTML = "84,899 square miles";
+      document.getElementById("state-abbreviation").innerHTML = "UT";
+      document.getElementById("name-origin").innerHTML = "From the Ute Native American  tribe meaning people of the mountains.";
+    } else if(inputState === "Vermont"){
+      document.querySelector("html").style.backgroundColor = "red";
+      document.getElementById("name").innerHTML = "Vermont";
+      document.getElementById("admitted").innerHTML = "March 4, 1791 (14th)";
+      document.getElementById("capital").innerHTML = "Montpelier";
+      document.getElementById("total-area").innerHTML = "9,616 square miles";
+      document.getElementById("state-abbreviation").innerHTML = "VT";
+      document.getElementById("name-origin").innerHTML = "French explorer Samuel de Champlain called the Green Mountains of Vermont 'Verd Mont' (green mountain)";
+    } else if(inputState === "Virginia"){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "Virginia";
+      document.getElementById("admitted").innerHTML = "June 25, 1788 (10th)";
+      document.getElementById("capital").innerHTML = "Richmond";
+      document.getElementById("total-area").innerHTML = "42,774.2 square miles";
+      document.getElementById("state-abbreviation").innerHTML = "VA";
+      document.getElementById("name-origin").innerHTML = " Named by Sir Walter Raleigh after Queen Elizabeth I of England, who was known as the 'Virgin' Queen.";
+    } else if(inputState === "Washington"){
+      document.querySelector("html").style.backgroundColor = "blue";
+      document.getElementById("name").innerHTML = "Washington";
+      document.getElementById("admitted").innerHTML = "November 11, 1889 (42nd)";
+      document.getElementById("capital").innerHTML = "Olympia";
+      document.getElementById("total-area").innerHTML = "71,362 square miles";
+      document.getElementById("state-abbreviation").innerHTML = "WA";
+      document.getElementById("name-origin").innerHTML = "Named after President George Washington";
+    } else if(inputState === "West Virginia"){
+      document.querySelector("html").style.backgroundColor = "green";
+      document.getElementById("name").innerHTML = "West Virginia";
+      document.getElementById("admitted").innerHTML = "June 20, 1863 (35th)";
+      document.getElementById("capital").innerHTML = "Charleston";
+      document.getElementById("total-area").innerHTML = "24,230 square miles";
+      document.getElementById("state-abbreviation").innerHTML = "WV";
+      document.getElementById("name-origin").innerHTML = " 'West Virginia' was ultimately chosen to name the western counties of the state of Virginia which refused to secede from the Union in 1863";
+    } else if(inputState === "Wisconsin"){
+      document.querySelector("html").style.backgroundColor = "purple";
+      document.getElementById("name").innerHTML = "Wisconsin";
+      document.getElementById("admitted").innerHTML = "May 29, 1848 (30th)";
+      document.getElementById("capital").innerHTML = "Madison";
+      document.getElementById("total-area").innerHTML = "65,498.37 square miles";
+      document.getElementById("state-abbreviation").innerHTML = "WI";
+      document.getElementById("name-origin").innerHTML = "Miami Indian name 'Meskonsing' meaning 'river running through a red place' (the red place referring to the red sandstone bluffs of the Wisconsin Dells";
+    } else if(inputState === "Wyoming"){
+      document.querySelector("html").style.backgroundColor = "yellow";
+      document.getElementById("name").innerHTML = "Wyoming";
+      document.getElementById("admitted").innerHTML = "July 10, 1890 (44th)";
+      document.getElementById("capital").innerHTML = "Cheyenne";
+      document.getElementById("total-area").innerHTML = "97,914 square miles";
+      document.getElementById("state-abbreviation").innerHTML = "WY";
+      document.getElementById("name-origin").innerHTML = "Derived from the Munsee word 'xwé:wamənk', meaning 'at the big river flat'.";
     } else {
       document.querySelector("html").style.backgroundColor = "green";
     }
