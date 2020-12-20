@@ -45,6 +45,46 @@ function stateInfo(){
       document.getElementById("total-area").innerHTML = "44,825  square miles";
       document.getElementById("state-abbreviation").innerHTML = "OH";
       document.getElementById("name-origin").innerHTML = " ' Ohiːyo ' Seneca word meaning 'great river', or 'large creek' ";
+    } else if(inputState === "Oklahoma"){
+      document.querySelector("html").style.backgroundColor = "purple";
+      document.getElementById("name").innerHTML = "Oklahoma";
+      document.getElementById("admitted").innerHTML = "November 16, 1907";
+      document.getElementById("capital").innerHTML = "Oklahoma City";
+      document.getElementById("total-area").innerHTML = "69,899  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "OK";
+      document.getElementById("name-origin").innerHTML = "Choctaw word that means “red people.” ";
+    } else if(inputState === "Oregon"){
+      document.querySelector("html").style.backgroundColor = "yellow";
+      document.getElementById("name").innerHTML = "Oregon";
+      document.getElementById("admitted").innerHTML = "February 14, 1859 (33rd)";
+      document.getElementById("capital").innerHTML = "Salem";
+      document.getElementById("total-area").innerHTML = "98,381  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "OR";
+      document.getElementById("name-origin").innerHTML = "Shoshoni words 'Ogwa,' River and  'Pe-on,'  West ";
+    } else if(inputState === "Pennsylvania"){
+      document.querySelector("html").style.backgroundColor = "yellow";
+      document.getElementById("name").innerHTML = "Pennsylvania";
+      document.getElementById("admitted").innerHTML = "December 12, 1787 (2nd)";
+      document.getElementById("capital").innerHTML = "Harrisburg";
+      document.getElementById("total-area").innerHTML = "46,055  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "PA";
+      document.getElementById("name-origin").innerHTML = "Named after 'William Penn', a Quaker, and the Latin word 'sylvania' which means woodlands. 'Penn's Woodlands'  ";
+    } else if(inputState === "Rhode Island"){
+      document.querySelector("html").style.backgroundColor = "red";
+      document.getElementById("name").innerHTML = "Rhode Island";
+      document.getElementById("admitted").innerHTML = "May 29, 1790 (13th)";
+      document.getElementById("capital").innerHTML = "Providence";
+      document.getElementById("total-area").innerHTML = "1,214  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "RI";
+      document.getElementById("name-origin").innerHTML = "Dutch explorer Adrian Block named it 'Roodt Eylandt' meaning 'red island' for the red clay along the shore.";
+    } else if(inputState === "South Carolina"){
+      document.querySelector("html").style.backgroundColor = "gray";
+      document.getElementById("name").innerHTML = "South Carolina";
+      document.getElementById("admitted").innerHTML = "May 23, 1788 (8th)";
+      document.getElementById("capital").innerHTML = "Columbia";
+      document.getElementById("total-area").innerHTML = "32,020  square miles";
+      document.getElementById("state-abbreviation").innerHTML = "SC";
+      document.getElementById("name-origin").innerHTML = "named in honor of King Charles I of England, Carolus being Latin for 'Charles' ";
     } else {
       document.querySelector("html").style.backgroundColor = "green";
     }
