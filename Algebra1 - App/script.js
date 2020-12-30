@@ -212,12 +212,8 @@
     },
     
 
-
-    
     // QUESTION BANK BELOW:
     // http://www.jmap.org/htmlstandard/6.EE.A.2.htm
-
-
 
 
   ];
