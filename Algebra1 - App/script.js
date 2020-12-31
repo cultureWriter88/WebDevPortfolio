@@ -38,6 +38,11 @@
     quizContainer.innerHTML = output.join('');
   }
 
+
+
+
+
+
   function showResults(){
 
     // gather answer containers from our quiz
@@ -45,6 +50,11 @@
 
     // keep track of user's answers
     let numCorrect = 0;
+    
+    // subTopic of questions
+    let modelingExpressionsCorrect = 0;
+    let orderOfOperationsCorrect = 0;
+    let evaluatingExpressionsCorrect = 0;
 
     // for each question...
     myQuestions.forEach( (currentQuestion, questionNumber) => {
@@ -67,12 +77,51 @@
         // color the answers red
         answerContainers[questionNumber].style.color = 'red';
       }
-    });
+
+
+
+
+      // if subTopic is Correct and Belongs to a subTopic... 
+      if(currentQuestion.subTopic === "modeling-expressions" && userAnswer === currentQuestion.correctAnswer){
+        modelingExpressionsCorrect++;
+      } else if (currentQuestion.subTopic === "order-of-operations" && userAnswer === currentQuestion.correctAnswer) {
+        orderOfOperationsCorrect++;
+      } else if (currentQuestion.subTopic === "evaluating-expressions" && userAnswer === currentQuestion.correctAnswer){
+        evaluatingExpressionsCorrect++;
+      } else{
+        document.querySelector("html").style.backgroundColor = "violet";    
+      };
+
+    }
+    
+    
+    );
+
+
+
+
+
+
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-  }
+    percentageContainer.innerHTML = "Total Percentage: " + Math.round(numCorrect / (myQuestions.length) * 100) + "%";
+    
+    
+    // numbers correct per subTopic
+    modelingExpressionsContainer.innerHTML = "Modeling Expressions: " + modelingExpressionsCorrect + " out of " + getNbOccur("modeling-expressions", myQuestions) + " or " + Math.round(modelingExpressionsCorrect / getNbOccur("modeling-expressions", myQuestions) * 100) + "%" ;
 
+    orderOfOperationsContainer.innerHTML = "Order of Operations: " + orderOfOperationsCorrect + " out of " + getNbOccur("order-of-operations", myQuestions) + " or " + Math.round(orderOfOperationsCorrect / getNbOccur("order-of-operations", myQuestions) * 100) + "%" ;
+
+    evaluatingExpressionsContainer.innerHTML = "Evaluating Expressions: " + evaluatingExpressionsCorrect + " out of " + getNbOccur("evaluating-expressions", myQuestions) + " or " + Math.round(evaluatingExpressionsCorrect / getNbOccur("evaluating-expressions", myQuestions) * 100) + "%" ;
+
+  };
+
+
+
+
+
+  
   function showSlide(n) {
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
@@ -104,6 +153,12 @@
   // Variables
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
+  const percentageContainer = document.getElementById('percentage');
+  const modelingExpressionsContainer = document.getElementById('modeling-expressions');
+  const orderOfOperationsContainer = document.getElementById('order-of-operations');
+  const evaluatingExpressionsContainer = document.getElementById('evaluating-expressions');
+
+
   const submitButton = document.getElementById('submit');
   
   const myQuestions = [
@@ -184,156 +239,152 @@
       // Adding sub-section below:
       subTopic:"order-of-operations"
     },
-    {
-      question: "#2 What is the first step in simplifying the expression (2 - 3 * 4 + 5) &#xB2",
-      answers: {
-        a: "square 5",
-        b: "add 4 and 5",
-        c: "subtract 3 from 2",
-        d: "multiply 3 by 4"
-      },
-      correctAnswer: "d",
+    // {
+    //   question: "#2 What is the first step in simplifying the expression (2 - 3 * 4 + 5) &#xB2",
+    //   answers: {
+    //     a: "square 5",
+    //     b: "add 4 and 5",
+    //     c: "subtract 3 from 2",
+    //     d: "multiply 3 by 4"
+    //   },
+    //   correctAnswer: "d",
 
-      // Adding sub-section below:
-      subTopic:"order-of-operations"
-    },
-    {
-      question: "#3 If the expression 3-4&#xB2 + <sup>6</sup>&frasl;<sub>2</sub>  is evaluated, what would be done last?",
-      answers: {
-        a: "subtracting",
-        b: "squaring",
-        c: "adding",
-        d: "dividing"
-      },
-      correctAnswer: "c",
+    //   // Adding sub-section below:
+    //   subTopic:"order-of-operations"
+    // },
+    // {
+    //   question: "#3 If the expression 3-4&#xB2 + <sup>6</sup>&frasl;<sub>2</sub>  is evaluated, what would be done last?",
+    //   answers: {
+    //     a: "subtracting",
+    //     b: "squaring",
+    //     c: "adding",
+    //     d: "dividing"
+    //   },
+    //   correctAnswer: "c",
 
-      // Adding sub-section below:
-      subTopic:"order-of-operations"
-    },
-    {
-      question: "#4 The expression 15 – 3[2 + 6(–3)] simplifies to",
-      answers: {
-        a: "-45",
-        b: "-33",
-        c: "63",
-        d: "192"
-      },
-      correctAnswer: "c",
+    //   // Adding sub-section below:
+    //   subTopic:"order-of-operations"
+    // },
+    // {
+    //   question: "#4 The expression 15 – 3[2 + 6(–3)] simplifies to",
+    //   answers: {
+    //     a: "-45",
+    //     b: "-33",
+    //     c: "63",
+    //     d: "192"
+    //   },
+    //   correctAnswer: "c",
 
-      // Adding sub-section below:
-      subTopic:"order-of-operations"
-    },
-    {
-      question: "#5 The expression -|-7| is equivalent to",
-      answers: {
-        a: "1",
-        b: "0",
-        c: "7",
-        d: "-7"
-      },
-      correctAnswer: "d",
+    //   // Adding sub-section below:
+    //   subTopic:"order-of-operations"
+    // },
+    // {
+    //   question: "#5 The expression -|-7| is equivalent to",
+    //   answers: {
+    //     a: "1",
+    //     b: "0",
+    //     c: "7",
+    //     d: "-7"
+    //   },
+    //   correctAnswer: "d",
 
-      // Adding sub-section below:
-      subTopic:"order-of-operations"
-    },
-    {
-      question: "#6 The value of the expression  |-20|-|6|  is",
-      answers: {
-        a: "26",
-        b: "14",
-        c: "-14",
-        d: "-26"
-      },
-      correctAnswer: "b",
+    //   // Adding sub-section below:
+    //   subTopic:"order-of-operations"
+    // },
+    // {
+    //   question: "#6 The value of the expression  |-20|-|6|  is",
+    //   answers: {
+    //     a: "26",
+    //     b: "14",
+    //     c: "-14",
+    //     d: "-26"
+    //   },
+    //   correctAnswer: "b",
 
-      // Adding sub-section below:
-      subTopic:"order-of-operations"
-    },
-    {
-      question: "#7 An expression equivalent to 3! is",
-      answers: {
-        a: "3 * 3",
-        b: "3 * 2 * 1",
-        c: "3 * 3 * 3",
-        d: "-3"
-      },
-      correctAnswer: "b",
+    //   // Adding sub-section below:
+    //   subTopic:"order-of-operations"
+    // },
+    // {
+    //   question: "#7 An expression equivalent to 3! is",
+    //   answers: {
+    //     a: "3 * 3",
+    //     b: "3 * 2 * 1",
+    //     c: "3 * 3 * 3",
+    //     d: "-3"
+    //   },
+    //   correctAnswer: "b",
 
-      // Adding sub-section below:
-      subTopic:"order-of-operations"
-    },
-    {
-      question: "#8 The value of 5! is",
-      answers: {
-        a: "1/5",
-        b: "5",
-        c: "20",
-        d: "120"
-      },
-      correctAnswer: "d",
+    //   // Adding sub-section below:
+    //   subTopic:"order-of-operations"
+    // },
+    // {
+    //   question: "#8 The value of 5! is",
+    //   answers: {
+    //     a: "1/5",
+    //     b: "5",
+    //     c: "20",
+    //     d: "120"
+    //   },
+    //   correctAnswer: "d",
 
-      // Adding sub-section below:
-      subTopic:"order-of-operations"
-    },
-    {
-      question: "#9 The value of <sup>7!</sup>&frasl;<sub>3!</sub> is",
-      answers: {
-        a: "840",
-        b: "24",
-        c: "7",
-        d: "4"
-      },
-      correctAnswer: "a",
+    //   // Adding sub-section below:
+    //   subTopic:"order-of-operations"
+    // },
+    // {
+    //   question: "#9 The value of <sup>7!</sup>&frasl;<sub>3!</sub> is",
+    //   answers: {
+    //     a: "840",
+    //     b: "24",
+    //     c: "7",
+    //     d: "4"
+    //   },
+    //   correctAnswer: "a",
 
-      // Adding sub-section below:
-      subTopic:"order-of-operations"
-    },
-    {
-      question: "#10 The value of <sup>8!</sup>&frasl;<sub>4!</sub> is",
-      answers: {
-        a: "1,680",
-        b: "2",
-        c: "2!",
-        d: "4!"
-      },
-      correctAnswer: "a",
+    //   // Adding sub-section below:
+    //   subTopic:"order-of-operations"
+    // },
+    // {
+    //   question: "#10 The value of <sup>8!</sup>&frasl;<sub>4!</sub> is",
+    //   answers: {
+    //     a: "1,680",
+    //     b: "2",
+    //     c: "2!",
+    //     d: "4!"
+    //   },
+    //   correctAnswer: "a",
 
-      // Adding sub-section below:
-      subTopic:"order-of-operations"
-    },
-    {
-      question: "#11 What is the value of | <sup>4(-6)+18</sup>&frasl;<sub>4!</sub>| ?",
-      answers: {
-        a: "1/4",
-        b: "-1/4",
-        c: "12",
-        d: "-12"
-      },
-      correctAnswer: "a",
+    //   // Adding sub-section below:
+    //   subTopic:"order-of-operations"
+    // },
+    // {
+    //   question: "#11 What is the value of | <sup>4(-6)+18</sup>&frasl;<sub>4!</sub>| ?",
+    //   answers: {
+    //     a: "1/4",
+    //     b: "-1/4",
+    //     c: "12",
+    //     d: "-12"
+    //   },
+    //   correctAnswer: "a",
 
-      // Adding sub-section below:
-      subTopic:"order-of-operations"
-    },
-    {
-      question: "#12 The value of the expression  6! + <sup>5!(3!)</sup>&frasl;<sub>4!</sub> - 10  is",
-      answers: {
-        a: "50",
-        b: "102",
-        c: "740",
-        d: "750"
-      },
-      correctAnswer: "c",
+    //   // Adding sub-section below:
+    //   subTopic:"order-of-operations"
+    // },
+    // {
+    //   question: "#12 The value of the expression  6! + <sup>5!(3!)</sup>&frasl;<sub>4!</sub> - 10  is",
+    //   answers: {
+    //     a: "50",
+    //     b: "102",
+    //     c: "740",
+    //     d: "750"
+    //   },
+    //   correctAnswer: "c",
 
-      // Adding sub-section below:
-      subTopic:"order-of-operations"
-    },
-
-
+    //   // Adding sub-section below:
+    //   subTopic:"order-of-operations"
+    // },
 
 
     ////////////////////////////
-
-
 
 
     // Regents-EVALUATING EXPRESSIONS 1a MC
@@ -345,25 +396,43 @@
         c: "13",
         d: "37"
       },
-      correctAnswer: "c",
+      correctAnswer: "b",
 
       // Adding sub-section below:
       subTopic:"evaluating-expressions"
     },
     
     
-
-
-
-
-
-    
-
     // QUESTION BANK BELOW:
     // http://www.jmap.org/htmlstandard/6.EE.A.2.htm
 
 
   ];
+
+
+
+
+
+  // COUNTS TOTAL NUMBER OF QUESTIONS FROM EACH subTopic
+  function getNbOccur(subTopic, myQuestions) {
+    var occurs = 0;
+    for (var i=0; i < myQuestions.length; i++) {
+      if ( 'subTopic' in myQuestions[i] && myQuestions[i].subTopic === subTopic ) occurs++;
+    }
+    return occurs;
+  }
+  
+  console.log( getNbOccur("modeling-expressions", myQuestions) );
+  console.log( getNbOccur("order-of-operations", myQuestions) );
+  console.log( getNbOccur("evaluating-expressions", myQuestions) );
+
+
+
+
+
+
+
+
 
   // Kick things off
   buildQuiz();
