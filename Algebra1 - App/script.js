@@ -105,9 +105,29 @@
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-    percentageContainer.innerHTML = "Total Percentage: " + Math.round(numCorrect / (myQuestions.length) * 100) + "%";
+    let percentageResult = Math.round(numCorrect / (myQuestions.length) * 100) + "%"
+    percentageContainer.innerHTML = "Total Percentage: " + percentageResult;
     
+
+
+
+
+
+
+
+
+// CONTINUE WORKING HERE 1-10-20
+// Working on saving scores to LOCAL STORAGE
+    // Save Results to 'localStorage'
+      
+      localStorage.setItem('resultsPercent', percentageResult);
+      let resultsPercentage = localStorage.getItem('resultsPercent');
+      resultsPercentage;
+      
+      console.log(percentageResult)
     
+
+
     // numbers correct per subTopic
     modelingExpressionsContainer.innerHTML = "Modeling Expressions: " + modelingExpressionsCorrect + " out of " + getNbOccur("modeling-expressions", myQuestions) + " or " + Math.round(modelingExpressionsCorrect / getNbOccur("modeling-expressions", myQuestions) * 100) + "%" ;
 
@@ -431,9 +451,6 @@
 
 
 
-
-
-
   // Kick things off
   buildQuiz();
 
@@ -452,3 +469,5 @@
   nextButton.addEventListener("click", showNextSlide);
 })
 ();
+
+

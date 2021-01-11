@@ -66,3 +66,7 @@ button:hover{
   height: 200px;
   margin-top: 40px;
 }
+#results, #percentage, #modeling-expressions, #order-of-operations, #evaluating-expressions{
+  padding-left: 1em;
+  text-align: left;
+}
