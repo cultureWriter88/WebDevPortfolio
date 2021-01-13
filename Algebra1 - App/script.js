@@ -40,9 +40,6 @@
 
 
 
-
-
-
   function showResults(){
 
     // gather answer containers from our quiz
@@ -79,8 +76,6 @@
       }
 
 
-
-
       // if subTopic is Correct and Belongs to a subTopic... 
       if(currentQuestion.subTopic === "modeling-expressions" && userAnswer === currentQuestion.correctAnswer){
         modelingExpressionsCorrect++;
@@ -100,47 +95,10 @@
 
 
 
-
-
-
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
     let percentageResult = Math.round(numCorrect / (myQuestions.length) * 100) + "%"
     percentageContainer.innerHTML = "Total Percentage: " + percentageResult;
-
-
-
-
-
-
-
-
-
-
-  // CONTINUE WORKING HERE 1-10-20
-  // Working on saving scores to LOCAL STORAGE
-  // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage
-      // Save Results to 'localStorage' as "resultsPercentage"
-
-
-      // NOTES: Loops over the code 5 times straight. LOGS % 5 times
-    function percentageResultsDatabase() {
-      let i;
-        for (i = 0; i < 5; i++) {
-          localStorage.setItem('resultsPercent', percentageResult);
-          let resultsPercentage = localStorage.getItem('resultsPercent');
-          resultsPercentage
-          
-          console.log(resultsPercentage)
-        }
-    }
-    percentageResultsDatabase();
-
-
-
-
-
-
 
     // numbers correct per subTopic
     modelingExpressionsContainer.innerHTML = "Modeling Expressions: " + modelingExpressionsCorrect + " out of " + getNbOccur("modeling-expressions", myQuestions) + " or " + Math.round(modelingExpressionsCorrect / getNbOccur("modeling-expressions", myQuestions) * 100) + "%" ;
@@ -149,13 +107,39 @@
 
     evaluatingExpressionsContainer.innerHTML = "Evaluating Expressions: " + evaluatingExpressionsCorrect + " out of " + getNbOccur("evaluating-expressions", myQuestions) + " or " + Math.round(evaluatingExpressionsCorrect / getNbOccur("evaluating-expressions", myQuestions) * 100) + "%" ;
 
+
+
+
+
+      // CONTINUE WORKING HERE 1-10-20
+      // Working on saving scores to LOCAL STORAGE
+      // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage
+          // Save Results to 'localStorage' as "resultsPercentage"
+
+
+          // NOTES: Loops over the code 5 times straight. LOGS % 5 times
+          // Continue working here, so far code loops through length of "myQuestions" array and returns result 3 times.
+          function percentageResultsDatabase() {
+            let i;
+              for (i = 0; i < myQuestions.length; i++) {
+  
+                localStorage.setItem('resultsPercent', percentageResult);
+                let resultsPercentage = localStorage.getItem('resultsPercent');
+                resultsPercentage;
+                // 
+                console.log(resultsPercentage + [i])
+              }
+          }
+          percentageResultsDatabase();
+
+
+
+
+
+
   };
 
 
-
-
-
-  
   function showSlide(n) {
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
