@@ -107,7 +107,6 @@
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
     let percentageResult = Math.round(numCorrect / (myQuestions.length) * 100) + "%"
     percentageContainer.innerHTML = "Total Percentage: " + percentageResult;
-    
 
 
 
@@ -116,16 +115,31 @@
 
 
 
-// CONTINUE WORKING HERE 1-10-20
-// Working on saving scores to LOCAL STORAGE
-    // Save Results to 'localStorage'
-      
-      localStorage.setItem('resultsPercent', percentageResult);
-      let resultsPercentage = localStorage.getItem('resultsPercent');
-      resultsPercentage;
-      
-      console.log(percentageResult)
-    
+
+
+  // CONTINUE WORKING HERE 1-10-20
+  // Working on saving scores to LOCAL STORAGE
+  // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage
+      // Save Results to 'localStorage' as "resultsPercentage"
+
+
+      // NOTES: Loops over the code 5 times straight. LOGS % 5 times
+    function percentageResultsDatabase() {
+      let i;
+        for (i = 0; i < 5; i++) {
+          localStorage.setItem('resultsPercent', percentageResult);
+          let resultsPercentage = localStorage.getItem('resultsPercent');
+          resultsPercentage
+          
+          console.log(resultsPercentage)
+        }
+    }
+    percentageResultsDatabase();
+
+
+
+
+
 
 
     // numbers correct per subTopic
@@ -184,47 +198,47 @@
   const myQuestions = [
 
     //Regents - MODELING EXPRESSIONS-IA
-    {
-      question: "Which verbal expression represents 2(n - 6)?" ,
-      answers: {
-        a: "two times n minus six",
-        b: "two times six minus n",
-        c: " two times the quantity six less than n",
-        d: " two times the quantity n less than six"
-      },
-      correctAnswer: "c",
+    // {
+    //   question: "Which verbal expression represents 2(n - 6)?" ,
+    //   answers: {
+    //     a: "two times n minus six",
+    //     b: "two times six minus n",
+    //     c: " two times the quantity six less than n",
+    //     d: " two times the quantity n less than six"
+    //   },
+    //   correctAnswer: "c",
       
-      // Adding sub-section below:
-      subTopic:"modeling-expressions"
+    //   // Adding sub-section below:
+    //   subTopic:"modeling-expressions"
 
-    },
-    {
-      question: "Which verbal expression represents 1/2(n - 3)?",
-      answers: {
-        a: " one-half the difference of n and 3",
-        b: " the difference of one-half n and 3",
-        c: " one-half n decreased by 3",
-        d: "one-half n subtracted from 3"
-      },
-      correctAnswer: "a",
+    // },
+    // {
+    //   question: "Which verbal expression represents 1/2(n - 3)?",
+    //   answers: {
+    //     a: " one-half the difference of n and 3",
+    //     b: " the difference of one-half n and 3",
+    //     c: " one-half n decreased by 3",
+    //     d: "one-half n subtracted from 3"
+    //   },
+    //   correctAnswer: "a",
 
-      // Adding sub-section below:
-      subTopic:"modeling-expressions"
+    //   // Adding sub-section below:
+    //   subTopic:"modeling-expressions"
       
-    },
-    {
-      question: "Which verbal expression can be represented by 2(x - 5)?",
-      answers: {
-        a: "the product of 2 and x, decreased by 5",
-        b: "2 multiplied by x less than 5",
-        c: " twice the difference of x and 5",
-        d: "5 less than 2 times x"
-      },
-      correctAnswer: "c",
+    // },
+    // {
+    //   question: "Which verbal expression can be represented by 2(x - 5)?",
+    //   answers: {
+    //     a: "the product of 2 and x, decreased by 5",
+    //     b: "2 multiplied by x less than 5",
+    //     c: " twice the difference of x and 5",
+    //     d: "5 less than 2 times x"
+    //   },
+    //   correctAnswer: "c",
 
-      // Adding sub-section below:
-      subTopic:"modeling-expressions"
-    },
+    //   // Adding sub-section below:
+    //   subTopic:"modeling-expressions"
+    // },
     {
       question: "Which verbal expression is represented by 2(x + 4)?",
       answers: {
@@ -411,16 +425,16 @@
     {
       question: "#1 What is the value of the expression |-5x + 12| when x = 5?",
       answers: {
-        a: "-37",
-        b: "-13",
+        a: "-13",
+        b: "37",
         c: "13",
         d: "37"
       },
-      correctAnswer: "b",
+      correctAnswer: "a",
 
       // Adding sub-section below:
       subTopic:"evaluating-expressions"
-    },
+    }
     
     
     // QUESTION BANK BELOW:
@@ -467,6 +481,7 @@
   submitButton.addEventListener('click', showResults);
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
+
 })
 ();
 
