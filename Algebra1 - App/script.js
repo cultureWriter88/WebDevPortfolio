@@ -111,31 +111,156 @@
 
 
 
-      // CONTINUE WORKING HERE 1-10-20
-      // Working on saving scores to LOCAL STORAGE
-      // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage
-          // Save Results to 'localStorage' as "resultsPercentage"
 
 
-          // NOTES: Loops over the code 5 times straight. LOGS % 5 times
-          // Continue working here, so far code loops through length of "myQuestions" array and returns result 3 times.
-          function percentageResultsDatabase() {
-            let i;
-              for (i = 0; i < myQuestions.length; i++) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////
+
+          // CONTINUE WORKING HERE 1-10-20
+          // Working on saving scores to LOCAL STORAGE
+          // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage
+              // Save Results to 'localStorage' as "resultsPercentage"
+
+
+              // NOTES: Loops over the code 5 times straight. LOGS % 5 times
+              // Continue working here, so far code loops through length of "myQuestions" array and returns result 3 times.
+              // function percentageResultsDatabase() {
+              //   let i;
+              //     for (i = 0; i < myQuestions.length; i++) {
   
-                localStorage.setItem('resultsPercent', percentageResult);
-                let resultsPercentage = localStorage.getItem('resultsPercent');
-                resultsPercentage;
-                // 
-                console.log(resultsPercentage + [i])
-              }
-          }
-          percentageResultsDatabase();
+
+                    let scores = [];
+
+                    localStorage.setItem('resultsPercent', JSON.stringify(percentageResult));
+                    let resultsPercentage = JSON.parse(localStorage.getItem('resultsPercent'));
+                    resultsPercentage;
+                      scores.push(resultsPercentage);
+
+                      console.log(resultsPercentage);
+                      console.log(scores);
+
+
+
+
+                      // CONTINNUE HERE: 1-13-20
+                      // IM TRYING TO PUSH EACH resultsPercentage to the scores Array...
+                      // USE BREAKPOINTS
+                      // https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
+                      // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_push
+                      // https://www.w3schools.com/jsref/jsref_push.asp
+                      // https://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage
 
 
 
 
 
+
+                        
+    
+
+
+                        //     var names = [];
+                        //     names[0] = prompt("New member name?");
+                        //     localStorage.setItem("names", JSON.stringify(names));
+
+                        //     //...
+                        //     var storedNames = JSON.parse(localStorage.getItem("names"));
+                        
+                        // //...
+                        // var storedNames = JSON.parse(localStorage.getItem("scoresSaved"));
+
+
+                        
+
+                  // }
+              // }
+              // percentageResultsDatabase();
+
+    ////////////////////
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
 
   };
 
@@ -428,7 +553,7 @@
   ];
 
 
-
+// 
 
 
   // COUNTS TOTAL NUMBER OF QUESTIONS FROM EACH subTopic
@@ -470,3 +595,112 @@
 ();
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////
+// HTML5 STORAGE of Test Scores
+// Here the code must be typed into the 'inputString'. I want the scores to be added to the Array automatically on submit button click...
+
+//array to store values
+var stores = Array();
+//input field text
+var inputField = document.getElementById('inputString');
+
+
+//clear the storage
+function clearStorage() {
+  //clear the storage
+  stores = Array();
+  localStorage.clear("database");
+  //visually cleared
+  document.getElementById('write').innerHTML = "storage cleared.";
+}
+
+
+
+
+// save the string
+function saveStatusLocally() {
+  //grab the value of the text box
+  var stringToSave = inputField.value;
+      if ((stringToSave == null) || (stringToSave == "")) {
+        document.getElementById('write').innerHTML = "nothing to store.";
+      } else {
+        //push that value to the array
+        stores.push(stringToSave);
+        //clear the input field for visual 
+        inputField.value = "";
+        //print that value into the local storage named database and joing by a non-breaking space
+        window.localStorage.setItem("database", stores.join(" "));
+        //confirm write
+        document.getElementById('write').innerHTML = "data stored.";
+        //clear message after 1s
+        setTimeout(function() {
+          document.getElementById('write').innerHTML = "";
+        }, 1000);
+      }
+      
+  let retrievedObject = JSON.parse(window.localStorage.getItem('results'));
+      if (!retrievedObject) {
+        alert('Empty, initializing');
+        retrievedObject = [];
+      }
+  retrievedObject.push('quiz.results' + retrievedObject.length);
+  window.localStorage.setItem('results', JSON.stringify(retrievedObject));
+}
+
+
+
+// read the string
+function readStatus() {
+    //print the value of the local storage "database" key
+    if (window.localStorage.getItem("database") == null) {
+      document.getElementById('write').innerHTML = "nothing stored.";
+    } else {
+      document.getElementById('write').innerHTML = window.localStorage.getItem("database") + "<br>quiz:" + window.localStorage.getItem("results");
+    }
+  }
+// END OF HTML STORAGE
+////////////////////////////////
