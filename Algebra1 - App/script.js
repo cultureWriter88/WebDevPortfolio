@@ -170,12 +170,26 @@
                     localStorage.setItem('resultsPercent', JSON.stringify(percentageResult));
                     let resultsPercentage = JSON.parse(localStorage.getItem('resultsPercent'));
                     resultsPercentage;
-                      scores.push(resultsPercentage);
-
                       console.log(resultsPercentage);
-                      console.log(scores);
+                      console.log(localStorage.resultsPercent);
 
 
+
+
+                      // function myFunction() {
+                      //   scores.push(resultsPercentage);
+                      //   document.getElementById("scores").innerHTML = scores;
+                      // }
+                      // myFunction();
+
+
+
+
+                      
+                      // scores[0]=prompt("New member score?");
+                      // localStorage.setItem("resultsPercent", JSON.stringify(resultsPercentage));
+                      // var storedScore = JSON.parse(localStorage.getItem("resultsPercent"));
+                      // console.log(scores);
 
 
                       // CONTINNUE HERE: 1-13-20
