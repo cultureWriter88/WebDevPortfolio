@@ -40,7 +40,26 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
   function showResults(){
+
 
     // gather answer containers from our quiz
     const answerContainers = quizContainer.querySelectorAll('.answers');
@@ -88,12 +107,7 @@
       };
 
     }
-    
-    
     );
-
-
-
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
@@ -106,50 +120,6 @@
     orderOfOperationsContainer.innerHTML = "Order of Operations: " + orderOfOperationsCorrect + " out of " + getNbOccur("order-of-operations", myQuestions) + " or " + Math.round(orderOfOperationsCorrect / getNbOccur("order-of-operations", myQuestions) * 100) + "%" ;
 
     evaluatingExpressionsContainer.innerHTML = "Evaluating Expressions: " + evaluatingExpressionsCorrect + " out of " + getNbOccur("evaluating-expressions", myQuestions) + " or " + Math.round(evaluatingExpressionsCorrect / getNbOccur("evaluating-expressions", myQuestions) * 100) + "%" ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     ////////////////////
 
           // CONTINUE WORKING HERE 1-10-20
@@ -164,70 +134,25 @@
               //   let i;
               //     for (i = 0; i < myQuestions.length; i++) {
   
-
-                    let scores = [];
-
+                    // Calculates and Returns Data and Time
                     localStorage.setItem('resultsPercent', JSON.stringify(percentageResult));
+                    let d = new Date();
+                    document.getElementById("submitDate").innerHTML = d;
                     let resultsPercentage = JSON.parse(localStorage.getItem('resultsPercent'));
-                    resultsPercentage;
-                      console.log(resultsPercentage);
-                      console.log(localStorage.resultsPercent);
+                    console.log(resultsPercentage);
+                    //////////////////// 
 
+                    // I want the resultsPercentage to show up as an item on the list.
 
+                    let resultsPercentageSerialized = JSON.stringify(resultsPercentage);
+                    
+                    localStorage.setItem("percentCorrect", resultsPercentageSerialized);
 
-
-                      // function myFunction() {
-                      //   scores.push(resultsPercentage);
-                      //   document.getElementById("scores").innerHTML = scores;
-                      // }
-                      // myFunction();
-
-
-
-
+                    let resultsPercentageDeserialized = JSON.parse(localStorage.getItem("percentCorrect"));
                       
-                      // scores[0]=prompt("New member score?");
-                      // localStorage.setItem("resultsPercent", JSON.stringify(resultsPercentage));
-                      // var storedScore = JSON.parse(localStorage.getItem("resultsPercent"));
-                      // console.log(scores);
 
 
-                      // CONTINNUE HERE: 1-13-20
-                      // IM TRYING TO PUSH EACH resultsPercentage to the scores Array...
-                      // USE BREAKPOINTS
-                      // https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
-                      // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_push
-                      // https://www.w3schools.com/jsref/jsref_push.asp
-                      // https://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage
-
-
-
-
-
-
-                        
-    
-
-
-                        //     var names = [];
-                        //     names[0] = prompt("New member name?");
-                        //     localStorage.setItem("names", JSON.stringify(names));
-
-                        //     //...
-                        //     var storedNames = JSON.parse(localStorage.getItem("names"));
-                        
-                        // //...
-                        // var storedNames = JSON.parse(localStorage.getItem("scoresSaved"));
-
-
-                        
-
-                  // }
-              // }
-              // percentageResultsDatabase();
-
-    ////////////////////
-      
+                    
 
 
 
@@ -274,9 +199,212 @@
 
 
 
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  https://github.com/taniarascia/sandbox/blob/master/tab/js/scripts.js
+
+  // localStorage items visible
+  const form = document.getElementById('submit');
+  const ul = document.querySelector('ul');
+  const button = document.getElementById('clearButton');
+  const input = document.getElementById('percentage');
+  let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+  console.log(resultsPercentage);
+  console.log(itemsArray);
+
+  localStorage.setItem('items', JSON.stringify(itemsArray));
+  const data = JSON.parse(localStorage.getItem('items'));
+  console.log(data);
+
+  const liMaker = (text) => {
+    const li = document.createElement('li');
+    li.textContent = text;
+    ul.appendChild(li);
+  };
+
+  submitButton.addEventListener('submit', function (e) {
+    e.preventDefault();
+  
+    itemsArray.push(input.value);
+    localStorage.setItem('items', JSON.stringify(itemsArray));
+    liMaker(input.value);
+    input.value = "";
+  });
+
+  //////////
+
+  console.log(typeof data);
+
+  data.forEach((item) => {
+    liMaker(item);
+  });
+
+
+  button.addEventListener('click', function () {
+    localStorage.clear();
+    while (ul.firstChild) {
+      ul.removeChild(ul.firstChild);
+    }
+  });
+
+
+// CONTINUE HERE vvv vvv vvv vvv vvv vvv vvv
+//  https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
+// https://stackoverflow.com/questions/35963412/append-data-to-localstorage-object
+
+
+
+
+// Secondary Sources vvv vvv vvv vvv vvv vvv vvv vvv vvv
+// https://stackoverflow.com/questions/49347392/to-do-list-delete-button-within-html-li-element
+// https://github.com/taniarascia/sandbox/blob/master/tab/js/scripts.js
+//  https://stackoverflow.com/questions/53275405/typeerror-data-foreach-is-not-a-function/53275463
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   };
+
+
+
+
+
+
+
+////////////////////////////////////////// end showResults().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   function showSlide(n) {
@@ -315,9 +443,9 @@
   const orderOfOperationsContainer = document.getElementById('order-of-operations');
   const evaluatingExpressionsContainer = document.getElementById('evaluating-expressions');
 
-
   const submitButton = document.getElementById('submit');
   
+  // my Questions stored here
   const myQuestions = [
 
     //Regents - MODELING EXPRESSIONS-IA
@@ -566,9 +694,7 @@
 
   ];
 
-
 // 
-
 
   // COUNTS TOTAL NUMBER OF QUESTIONS FROM EACH subTopic
   function getNbOccur(subTopic, myQuestions) {
@@ -607,46 +733,6 @@
 
 })
 ();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -706,15 +792,8 @@ function saveStatusLocally() {
 }
 
 
-
-// read the string
-function readStatus() {
-    //print the value of the local storage "database" key
-    if (window.localStorage.getItem("database") == null) {
-      document.getElementById('write').innerHTML = "nothing stored.";
-    } else {
-      document.getElementById('write').innerHTML = window.localStorage.getItem("database") + "<br>quiz:" + window.localStorage.getItem("results");
-    }
-  }
-// END OF HTML STORAGE
 ////////////////////////////////
+
+
+
+

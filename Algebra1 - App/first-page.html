@@ -32,8 +32,10 @@
     <!-- These are the results after taking quiz -->
     <div id="results"></div>
     <div id="percentage"></div>
+        <p id="submitDate"></p>
       <!-- subTopic's Breakdown -->
-      <div id="modeling-expressions"></div>
+      <div id="modeling-expressions">
+      </div>
       <div id="order-of-operations"></div>
       <div id="evaluating-expressions"></div>
       <div id="scores"></div>
@@ -43,20 +45,32 @@
 
 
 
-<!-- HTML5 STORAGE of Test Scores -->
-  <input type="text" placeholder="something to store" id="inputString" />
-  <h1 onclick="clearStorage()">clear storage</h1>
-  <h1 onclick="saveStatusLocally()">store</h1>
-  <h1 onclick="readStatus()">print</h1>
-  <div id="write"></div>
-  <!-- END OF HTML STORAGE -->
+
+
+
+
+  <!-- localStorage scores saved -->
+  <div class="small-container">
+
+    <form>
+      <input id="item" type="text" placeholder="New">
+      
+    </form>
+
+    <h2>Items</h2>
+    <ul></ul>
+    <div id="clear">
+      <button id="clearButton">Clear All</button>
+    </div>
+  </div>
+  <!-- END - localStorage scores saved - END -->
 
 
 
 <script src="script.js"></script>
 
 <!-- CONNECTION TO mongoDB -->
-<script src="app.js"></script>
+<!-- <script src="app.js"></script> -->
 
 </body>
 </html>
