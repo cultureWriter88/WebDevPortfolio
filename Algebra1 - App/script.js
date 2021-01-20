@@ -142,13 +142,6 @@
                     console.log(resultsPercentage);
                     //////////////////// 
 
-                    // I want the resultsPercentage to show up as an item on the list.
-
-                    let resultsPercentageSerialized = JSON.stringify(resultsPercentage);
-                    
-                    localStorage.setItem("percentCorrect", resultsPercentageSerialized);
-
-                    let resultsPercentageDeserialized = JSON.parse(localStorage.getItem("percentCorrect"));
                       
 
 
@@ -250,12 +243,10 @@
   const button = document.getElementById('clearButton');
   const input = document.getElementById('percentage');
   let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-  console.log(resultsPercentage);
-  console.log(itemsArray);
+
 
   localStorage.setItem('items', JSON.stringify(itemsArray));
   const data = JSON.parse(localStorage.getItem('items'));
-  console.log(data);
 
   const liMaker = (text) => {
     const li = document.createElement('li');
@@ -266,27 +257,30 @@
   submitButton.addEventListener('submit', function (e) {
     e.preventDefault();
   
-    itemsArray.push(input.value);
-    localStorage.setItem('items', JSON.stringify(itemsArray));
-    liMaker(input.value);
-    input.value = "";
+    itemsArray.push(resultsPercentage);
+    localStorage.setItem('items', JSON.parse(localStorage.getItem('resultsPercent'));
+    liMaker(resultsPercentage);
+    resultsPercentage = "";
   });
+  console.log(localStorage);
+  console.log(data);
+
 
   //////////
-
-  console.log(typeof data);
 
   data.forEach((item) => {
     liMaker(item);
   });
 
+  // button.addEventListener('click', function () {
+  //   localStorage.clear();
+  //   while (ul.firstChild) {
+  //     ul.removeChild(ul.firstChild);
+  //   }
+  // })
+  ;
+  
 
-  button.addEventListener('click', function () {
-    localStorage.clear();
-    while (ul.firstChild) {
-      ul.removeChild(ul.firstChild);
-    }
-  });
 
 
 // CONTINUE HERE vvv vvv vvv vvv vvv vvv vvv
@@ -304,52 +298,38 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   };
-
-
-
-
-
-
-
 ////////////////////////////////////////// end showResults().
+
+
+
+
+
+
+
+
+for (var i = 0; i < localStorage.length; i++){
+  console.log(localStorage[i]);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -694,7 +674,7 @@
 
   ];
 
-// 
+  // 
 
   // COUNTS TOTAL NUMBER OF QUESTIONS FROM EACH subTopic
   function getNbOccur(subTopic, myQuestions) {
@@ -739,60 +719,7 @@
 
 
 
-////////////////////////////////
-// HTML5 STORAGE of Test Scores
-// Here the code must be typed into the 'inputString'. I want the scores to be added to the Array automatically on submit button click...
 
-//array to store values
-var stores = Array();
-//input field text
-var inputField = document.getElementById('inputString');
-
-
-//clear the storage
-function clearStorage() {
-  //clear the storage
-  stores = Array();
-  localStorage.clear("database");
-  //visually cleared
-  document.getElementById('write').innerHTML = "storage cleared.";
-}
-
-
-
-
-// save the string
-function saveStatusLocally() {
-  //grab the value of the text box
-  var stringToSave = inputField.value;
-      if ((stringToSave == null) || (stringToSave == "")) {
-        document.getElementById('write').innerHTML = "nothing to store.";
-      } else {
-        //push that value to the array
-        stores.push(stringToSave);
-        //clear the input field for visual 
-        inputField.value = "";
-        //print that value into the local storage named database and joing by a non-breaking space
-        window.localStorage.setItem("database", stores.join(" "));
-        //confirm write
-        document.getElementById('write').innerHTML = "data stored.";
-        //clear message after 1s
-        setTimeout(function() {
-          document.getElementById('write').innerHTML = "";
-        }, 1000);
-      }
-      
-  let retrievedObject = JSON.parse(window.localStorage.getItem('results'));
-      if (!retrievedObject) {
-        alert('Empty, initializing');
-        retrievedObject = [];
-      }
-  retrievedObject.push('quiz.results' + retrievedObject.length);
-  window.localStorage.setItem('results', JSON.stringify(retrievedObject));
-}
-
-
-////////////////////////////////
 
 
 
