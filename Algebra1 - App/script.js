@@ -1,4 +1,4 @@
-(function(){
+
   // Functions
   function buildQuiz(){
     // variable to store the HTML output
@@ -36,7 +36,7 @@
 
     // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join('');
-  }
+  };
 
 
 
@@ -50,7 +50,7 @@
 
 
 
-/////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////
 
 
 
@@ -105,9 +105,7 @@
       } else{
         document.querySelector("html").style.backgroundColor = "violet";    
       };
-
-    }
-    );
+    });
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
@@ -133,26 +131,63 @@
               // function percentageResultsDatabase() {
               //   let i;
               //     for (i = 0; i < myQuestions.length; i++) {
-  
-                    // Calculates and Returns Data and Time
-                    localStorage.setItem('resultsPercent', JSON.stringify(percentageResult));
-                    let d = new Date();
-                    document.getElementById("submitDate").innerHTML = d;
-                    let resultsPercentage = JSON.parse(localStorage.getItem('resultsPercent'));
-                    console.log(resultsPercentage);
-                    //////////////////// 
 
-                      
+              
 
+              // Calculates and Returns Data and Time
+                  localStorage.setItem('resultsPercent', JSON.stringify(percentageResult));
+                  let d = new Date();
+                  document.getElementById("submitDate").innerHTML = d;
+                  let resultsPercentage = JSON.parse(localStorage.getItem('resultsPercent'));
+                  // resultsPercentage is a STRING
+                  // console.log(resultsPercentage); 
+              //////////////////// 
 
+                    const form = document.querySelector('form');
+                    const ul = document.querySelector('ul');
+                    const clearButton = document.getElementById('clearButton');
+                    const input = document.getElementById('item');
+                    let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+                    let scoreToArray = JSON.stringify(resultsPercentage)
+
+                    localStorage.setItem('items', JSON.stringify(itemsArray));
+                    const data = JSON.parse(localStorage.getItem('items'));
+                    
+                    const liMaker = (text) => {
+                      const li = document.createElement('li');
+                      li.textContent = text;
+                      ul.appendChild(li);
+                    }
                     
 
 
 
+                    // WORKING HERE TO STORE resultsPercentage returns in itemsArray
+                    form.addEventListener('submit', function (e) {
+                      e.preventDefault();
+                    
+                      itemsArray.push(resultsPercentage);
+                      localStorage.setItem('items', JSON.stringify(itemsArray));
+                      liMaker(resultsPercentage);
+                      input.value = "";
+                    });
+                    
 
 
 
+                    console.log(resultsPercentage)
 
+                    data.forEach(item => {
+                      liMaker(item);
+                    });
+                    
+                    clearButton.addEventListener('click', function () {
+                      localStorage.clear();
+                      while (ul.firstChild) {
+                        ul.removeChild(ul.firstChild);
+                      }
+                      itemsArray = [];
+                    });
 
 
 
@@ -218,68 +253,104 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// MOST RECENT VERSION OF CODE
 //  https://github.com/taniarascia/sandbox/blob/master/tab/js/scripts.js
 
+// const form = document.querySelector('form')
+// const ul = document.querySelector('ul')
+// const button = document.querySelector('button')
+// const input = document.getElementById('item')
+// let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+// let scoreToArray = JSON.stringify(resultsPercentage)
+
+// localStorage.setItem('items', JSON.stringify(itemsArray))
+// const data = JSON.parse(localStorage.getItem('items'))
+
+// const liMaker = (scoreToArray) => {
+//   const li = document.createElement('li')
+//   li.textContent = scoreToArray
+//   ul.appendChild(li)
+// }
+
+// submit.addEventListener('submit', function (e) {
+//   e.preventDefault()
+
+//   itemsArray.push(JSON.parse(scoreToArray))
+//   localStorage.setItem('items', JSON.stringify(itemsArray))
+//   liMakerJSON.parse(scoreToArray)
+// })
+
+// data.forEach((scoreToArray) => {
+//   liMaker(scoreToArray[1])
+// })
+
+// console.log(itemsArray)
+
+// button.addEventListener('click', function () {
+//   localStorage.clear()
+//   while (ul.firstChild) {
+//     ul.removeChild(ul.firstChild)
+//   }
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// PRIOR VERSION
+
   // localStorage items visible
-  const form = document.getElementById('submit');
-  const ul = document.querySelector('ul');
-  const button = document.getElementById('clearButton');
-  const input = document.getElementById('percentage');
-  let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+  // const form = document.getElementById('submit');
+  // const ul = document.querySelector('ul');
+  // const button = document.getElementById('clearButton');
+  // const input = document.getElementById('item');
+  // let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
+  // localStorage.setItem('items', JSON.stringify(itemsArray));
+  // const data = JSON.parse(localStorage.getItem('items'));
 
-  localStorage.setItem('items', JSON.stringify(itemsArray));
-  const data = JSON.parse(localStorage.getItem('items'));
+  // const liMaker = (text) => {
+  //   const li = document.createElement('li');
+  //   li.textContent = text;
+  //   ul.appendChild(li);
+  // };
 
-  const liMaker = (text) => {
-    const li = document.createElement('li');
-    li.textContent = text;
-    ul.appendChild(li);
-  };
-
-  submitButton.addEventListener('submit', function (e) {
-    e.preventDefault();
+  // form.addEventListener('submit', function (e) {
+  //   e.preventDefault();
   
-    itemsArray.push(resultsPercentage);
-    localStorage.setItem('items', JSON.parse(localStorage.getItem('resultsPercent'));
-    liMaker(resultsPercentage);
-    resultsPercentage = "";
-  });
-  console.log(localStorage);
-  console.log(data);
+  //   itemsArray.push(resultsPercentage);
+  //   localStorage.setItem('items', JSON.stringify(itemsArray));
+  //   liMaker(resultsPercentage);
+  // });
+  // console.log(localStorage);
+  // console.log(data);
 
 
-  //////////
+  // //////////
 
-  data.forEach((item) => {
-    liMaker(item);
-  });
+  // data.forEach((resultsPercentage) => {
+  //   liMaker(resultsPercentage);
+  // })
 
   // button.addEventListener('click', function () {
   //   localStorage.clear();
   //   while (ul.firstChild) {
   //     ul.removeChild(ul.firstChild);
   //   }
-  // })
-  ;
-  
+  // });
+
+  //  END OF PRIOR VERSION
 
 
 
@@ -287,30 +358,15 @@
 //  https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
 // https://stackoverflow.com/questions/35963412/append-data-to-localstorage-object
 
-
-
-
 // Secondary Sources vvv vvv vvv vvv vvv vvv vvv vvv vvv
 // https://stackoverflow.com/questions/49347392/to-do-list-delete-button-within-html-li-element
 // https://github.com/taniarascia/sandbox/blob/master/tab/js/scripts.js
 //  https://stackoverflow.com/questions/53275405/typeerror-data-foreach-is-not-a-function/53275463
 
 
-
-
   };
 ////////////////////////////////////////// end showResults().
 
-
-
-
-
-
-
-
-for (var i = 0; i < localStorage.length; i++){
-  console.log(localStorage[i]);
-};
 
 
 
@@ -422,7 +478,6 @@ for (var i = 0; i < localStorage.length; i++){
   const modelingExpressionsContainer = document.getElementById('modeling-expressions');
   const orderOfOperationsContainer = document.getElementById('order-of-operations');
   const evaluatingExpressionsContainer = document.getElementById('evaluating-expressions');
-
   const submitButton = document.getElementById('submit');
   
   // my Questions stored here
@@ -679,7 +734,7 @@ for (var i = 0; i < localStorage.length; i++){
   // COUNTS TOTAL NUMBER OF QUESTIONS FROM EACH subTopic
   function getNbOccur(subTopic, myQuestions) {
     var occurs = 0;
-    for (var i=0; i < myQuestions.length; i++) {
+    for (var i = 0; i < myQuestions.length; i++) {
       if ( 'subTopic' in myQuestions[i] && myQuestions[i].subTopic === subTopic ) occurs++;
     }
     return occurs;
@@ -711,8 +766,7 @@ for (var i = 0; i < localStorage.length; i++){
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
 
-})
-();
+
 
 
 
