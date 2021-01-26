@@ -142,17 +142,14 @@
                   // resultsPercentage is a STRING
                   // console.log(resultsPercentage); 
               //////////////////// 
-
-                    const form = document.querySelector('form');
+                    let scoreToArray = JSON.stringify(resultsPercentage)
                     const ul = document.querySelector('ul');
                     const clearButton = document.getElementById('clearButton');
-                    const input = document.getElementById('item');
                     let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-                    let scoreToArray = JSON.stringify(resultsPercentage)
 
                     localStorage.setItem('items', JSON.stringify(itemsArray));
                     const data = JSON.parse(localStorage.getItem('items'));
-                    
+
                     const liMaker = (text) => {
                       const li = document.createElement('li');
                       li.textContent = text;
@@ -160,23 +157,16 @@
                     }
                     
 
-
-
                     // WORKING HERE TO STORE resultsPercentage returns in itemsArray
-                    form.addEventListener('submit', function (e) {
+                    submitButton.addEventListener('click', function (e) {
                       e.preventDefault();
-                    
-                      itemsArray.push(resultsPercentage);
+
+                      itemsArray.push(scoreToArray);
                       localStorage.setItem('items', JSON.stringify(itemsArray));
-                      liMaker(resultsPercentage);
-                      input.value = "";
+                      liMaker(scoreToArray);
+                      scoreToArray = "";
                     });
                     
-
-
-
-                    console.log(resultsPercentage)
-
                     data.forEach(item => {
                       liMaker(item);
                     });
@@ -189,6 +179,13 @@
                       itemsArray = [];
                     });
 
+                    console.log(resultsPercentage)
+                    console.log(itemsArray)
+                    console.log(localStorage.items)
+
+                    // 1-25-21
+                    // The array only updates after multiple clicks
+                    //  Fix so Array updates after one click
 
 
 
@@ -758,8 +755,12 @@
   const slides = document.querySelectorAll(".slide");
   let currentSlide = 0;
 
+
+
   // Show the first slide
   showSlide(currentSlide);
+
+
 
   // Event listeners
   submitButton.addEventListener('click', showResults);
