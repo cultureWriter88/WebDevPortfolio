@@ -1,483 +1,86 @@
+// Variables
+const quizContainer = document.getElementById('quiz');
+const resultsContainer = document.getElementById('results');
+const percentageContainer = document.getElementById('percentage');
+const modelingExpressionsContainer = document.getElementById('modeling-expressions');
+const orderOfOperationsContainer = document.getElementById('order-of-operations');
+const evaluatingExpressionsContainer = document.getElementById('evaluating-expressions');
+const submitButton = document.getElementById('submit');
 
-  // Functions
-  function buildQuiz(){
-    // variable to store the HTML output
-    const output = [];
 
-    // for each question...
-    myQuestions.forEach(
-      (currentQuestion, questionNumber) => {
 
-        // variable to store the list of possible answers
-        const answers = [];
+// Functions
+function buildQuiz(){
+  // variable to store the HTML output
+  const output = [];
 
-        // and for each available answer...
-        for(letter in currentQuestion.answers){
+  // for each question...
+  myQuestions.forEach(
+    (currentQuestion, questionNumber) => {
 
-          // ...add an HTML radio button
-          answers.push(
-            `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-            </label>`
-          );
-        }
+      // variable to store the list of possible answers
+      const answers = [];
 
-        // add this question and its answers to the output
-        output.push(
-          `<div class="slide">
-            <div class="question"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join("")} </div>
-          </div>`
+      // and for each available answer...
+      for(letter in currentQuestion.answers){
+
+        // ...add an HTML radio button
+        answers.push(
+          `<label>
+            <input type="radio" name="question${questionNumber}" value="${letter}">
+            ${letter} :
+            ${currentQuestion.answers[letter]}
+          </label>`
         );
       }
-    );
 
-    // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join('');
-  };
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-  function showResults(){
-
-
-    // gather answer containers from our quiz
-    const answerContainers = quizContainer.querySelectorAll('.answers');
-
-    // keep track of user's answers
-    let numCorrect = 0;
-    
-    // subTopic of questions
-    let modelingExpressionsCorrect = 0;
-    let orderOfOperationsCorrect = 0;
-    let evaluatingExpressionsCorrect = 0;
-
-    // for each question...
-    myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-      // find selected answer
-      const answerContainer = answerContainers[questionNumber];
-      const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-      // if answer is correct
-      if(userAnswer === currentQuestion.correctAnswer){
-        // add to the number of correct answers
-        numCorrect++;
-
-        // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
-      }
-      // if answer is wrong or blank
-      else{
-        // color the answers red
-        answerContainers[questionNumber].style.color = 'red';
-      }
-
-
-      // if subTopic is Correct and Belongs to a subTopic... 
-      if(currentQuestion.subTopic === "modeling-expressions" && userAnswer === currentQuestion.correctAnswer){
-        modelingExpressionsCorrect++;
-      } else if (currentQuestion.subTopic === "order-of-operations" && userAnswer === currentQuestion.correctAnswer) {
-        orderOfOperationsCorrect++;
-      } else if (currentQuestion.subTopic === "evaluating-expressions" && userAnswer === currentQuestion.correctAnswer){
-        evaluatingExpressionsCorrect++;
-      } else{
-        document.querySelector("html").style.backgroundColor = "violet";    
-      };
-    });
-
-    // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-    let percentageResult = Math.round(numCorrect / (myQuestions.length) * 100) + "%"
-    percentageContainer.innerHTML = "Total Percentage: " + percentageResult;
-
-    // numbers correct per subTopic
-    modelingExpressionsContainer.innerHTML = "Modeling Expressions: " + modelingExpressionsCorrect + " out of " + getNbOccur("modeling-expressions", myQuestions) + " or " + Math.round(modelingExpressionsCorrect / getNbOccur("modeling-expressions", myQuestions) * 100) + "%" ;
-
-    orderOfOperationsContainer.innerHTML = "Order of Operations: " + orderOfOperationsCorrect + " out of " + getNbOccur("order-of-operations", myQuestions) + " or " + Math.round(orderOfOperationsCorrect / getNbOccur("order-of-operations", myQuestions) * 100) + "%" ;
-
-    evaluatingExpressionsContainer.innerHTML = "Evaluating Expressions: " + evaluatingExpressionsCorrect + " out of " + getNbOccur("evaluating-expressions", myQuestions) + " or " + Math.round(evaluatingExpressionsCorrect / getNbOccur("evaluating-expressions", myQuestions) * 100) + "%" ;
-    ////////////////////
-
-          // CONTINUE WORKING HERE 1-10-20
-          // Working on saving scores to LOCAL STORAGE
-          // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage
-              // Save Results to 'localStorage' as "resultsPercentage"
-
-
-              // NOTES: Loops over the code 5 times straight. LOGS % 5 times
-              // Continue working here, so far code loops through length of "myQuestions" array and returns result 3 times.
-              // function percentageResultsDatabase() {
-              //   let i;
-              //     for (i = 0; i < myQuestions.length; i++) {
-
-              
-
-              // Calculates and Returns Data and Time
-                  localStorage.setItem('resultsPercent', JSON.stringify(percentageResult));
-                  let d = new Date();
-                  document.getElementById("submitDate").innerHTML = d;
-                  let resultsPercentage = JSON.parse(localStorage.getItem('resultsPercent'));
-                  // resultsPercentage is a STRING
-                  // console.log(resultsPercentage); 
-              //////////////////// 
-                    let scoreToArray = JSON.stringify(resultsPercentage)
-                    const ul = document.querySelector('ul');
-                    const clearButton = document.getElementById('clearButton');
-                    let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-
-                    localStorage.setItem('items', JSON.stringify(itemsArray));
-                    const data = JSON.parse(localStorage.getItem('items'));
-
-                    const liMaker = (text) => {
-                      const li = document.createElement('li');
-                      li.textContent = text;
-                      ul.appendChild(li);
-                    }
-                    
-
-                    // WORKING HERE TO STORE resultsPercentage returns in itemsArray
-                    submitButton.addEventListener('click', function (e) {
-                      e.preventDefault();
-
-                      itemsArray.push(scoreToArray);
-                      localStorage.setItem('items', JSON.stringify(itemsArray));
-                      liMaker(scoreToArray);
-                      scoreToArray = "";
-                    });
-                    
-                    data.forEach(item => {
-                      liMaker(item);
-                    });
-                    
-                    clearButton.addEventListener('click', function () {
-                      localStorage.clear();
-                      while (ul.firstChild) {
-                        ul.removeChild(ul.firstChild);
-                      }
-                      itemsArray = [];
-                    });
-
-                    console.log(resultsPercentage)
-                    console.log(itemsArray)
-                    console.log(localStorage.items)
-
-                    // 1-25-21
-                    // The array only updates after multiple clicks
-                    //  Fix so Array updates after one click
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// MOST RECENT VERSION OF CODE
-//  https://github.com/taniarascia/sandbox/blob/master/tab/js/scripts.js
-
-// const form = document.querySelector('form')
-// const ul = document.querySelector('ul')
-// const button = document.querySelector('button')
-// const input = document.getElementById('item')
-// let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-// let scoreToArray = JSON.stringify(resultsPercentage)
-
-// localStorage.setItem('items', JSON.stringify(itemsArray))
-// const data = JSON.parse(localStorage.getItem('items'))
-
-// const liMaker = (scoreToArray) => {
-//   const li = document.createElement('li')
-//   li.textContent = scoreToArray
-//   ul.appendChild(li)
-// }
-
-// submit.addEventListener('submit', function (e) {
-//   e.preventDefault()
-
-//   itemsArray.push(JSON.parse(scoreToArray))
-//   localStorage.setItem('items', JSON.stringify(itemsArray))
-//   liMakerJSON.parse(scoreToArray)
-// })
-
-// data.forEach((scoreToArray) => {
-//   liMaker(scoreToArray[1])
-// })
-
-// console.log(itemsArray)
-
-// button.addEventListener('click', function () {
-//   localStorage.clear()
-//   while (ul.firstChild) {
-//     ul.removeChild(ul.firstChild)
-//   }
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// PRIOR VERSION
-
-  // localStorage items visible
-  // const form = document.getElementById('submit');
-  // const ul = document.querySelector('ul');
-  // const button = document.getElementById('clearButton');
-  // const input = document.getElementById('item');
-  // let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-
-  // localStorage.setItem('items', JSON.stringify(itemsArray));
-  // const data = JSON.parse(localStorage.getItem('items'));
-
-  // const liMaker = (text) => {
-  //   const li = document.createElement('li');
-  //   li.textContent = text;
-  //   ul.appendChild(li);
-  // };
-
-  // form.addEventListener('submit', function (e) {
-  //   e.preventDefault();
-  
-  //   itemsArray.push(resultsPercentage);
-  //   localStorage.setItem('items', JSON.stringify(itemsArray));
-  //   liMaker(resultsPercentage);
-  // });
-  // console.log(localStorage);
-  // console.log(data);
-
-
-  // //////////
-
-  // data.forEach((resultsPercentage) => {
-  //   liMaker(resultsPercentage);
-  // })
-
-  // button.addEventListener('click', function () {
-  //   localStorage.clear();
-  //   while (ul.firstChild) {
-  //     ul.removeChild(ul.firstChild);
-  //   }
-  // });
-
-  //  END OF PRIOR VERSION
-
-
-
-// CONTINUE HERE vvv vvv vvv vvv vvv vvv vvv
-//  https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
-// https://stackoverflow.com/questions/35963412/append-data-to-localstorage-object
-
-// Secondary Sources vvv vvv vvv vvv vvv vvv vvv vvv vvv
-// https://stackoverflow.com/questions/49347392/to-do-list-delete-button-within-html-li-element
-// https://github.com/taniarascia/sandbox/blob/master/tab/js/scripts.js
-//  https://stackoverflow.com/questions/53275405/typeerror-data-foreach-is-not-a-function/53275463
-
-
-  };
-////////////////////////////////////////// end showResults().
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  function showSlide(n) {
-    slides[currentSlide].classList.remove('active-slide');
-    slides[n].classList.add('active-slide');
-    currentSlide = n;
-    if(currentSlide === 0){
-      previousButton.style.display = 'none';
+      // add this question and its answers to the output
+      output.push(
+        `<div class="slide">
+          <div class="question"> ${currentQuestion.question} </div>
+          <div class="answers"> ${answers.join("")} </div>
+        </div>`
+      );
     }
-    else{
-      previousButton.style.display = 'inline-block';
-    }
-    if(currentSlide === slides.length-1){
-      nextButton.style.display = 'none';
-      submitButton.style.display = 'inline-block';
-    }
-    else{
-      nextButton.style.display = 'inline-block';
-      submitButton.style.display = 'none';
-    }
+  );
+
+  // finally combine our output list into one string of HTML and put it on the page
+  quizContainer.innerHTML = output.join('');
+};
+/////////////////////////////////////////////////////////////////
+
+
+function showSlide(n) {
+  slides[currentSlide].classList.remove('active-slide');
+  slides[n].classList.add('active-slide');
+  currentSlide = n;
+  if(currentSlide === 0){
+    previousButton.style.display = 'none';
+  }
+  else{
+    previousButton.style.display = 'inline-block';
+  }
+  if(currentSlide === slides.length-1){
+    nextButton.style.display = 'none';
+    submitButton.style.display = 'inline-block';
+  }
+  else{
+    nextButton.style.display = 'inline-block';
+    submitButton.style.display = 'none';
   }
 
-  function showNextSlide() {
-    showSlide(currentSlide + 1);
-  }
+}
 
-  function showPreviousSlide() {
-    showSlide(currentSlide - 1);
-  }
+function showNextSlide() {
+  showSlide(currentSlide + 1);
+}
 
-  // Variables
-  const quizContainer = document.getElementById('quiz');
-  const resultsContainer = document.getElementById('results');
-  const percentageContainer = document.getElementById('percentage');
-  const modelingExpressionsContainer = document.getElementById('modeling-expressions');
-  const orderOfOperationsContainer = document.getElementById('order-of-operations');
-  const evaluatingExpressionsContainer = document.getElementById('evaluating-expressions');
-  const submitButton = document.getElementById('submit');
-  
-  // my Questions stored here
+function showPreviousSlide() {
+  showSlide(currentSlide - 1);
+}
+
+
+// my Questions stored here
   const myQuestions = [
 
     //Regents - MODELING EXPRESSIONS-IA
@@ -725,47 +328,180 @@
 
 
   ];
+// my Questions stored here
 
-  // 
 
-  // COUNTS TOTAL NUMBER OF QUESTIONS FROM EACH subTopic
-  function getNbOccur(subTopic, myQuestions) {
-    var occurs = 0;
-    for (var i = 0; i < myQuestions.length; i++) {
-      if ( 'subTopic' in myQuestions[i] && myQuestions[i].subTopic === subTopic ) occurs++;
-    }
-    return occurs;
+// COUNTS TOTAL NUMBER OF QUESTIONS FROM EACH subTopic
+function getNbOccur(subTopic, myQuestions) {
+  var occurs = 0;
+  for (var i = 0; i < myQuestions.length; i++) {
+    if ( 'subTopic' in myQuestions[i] && myQuestions[i].subTopic === subTopic ) occurs++;
   }
+  return occurs;
+}
+
+console.log( getNbOccur("modeling-expressions", myQuestions) );
+console.log( getNbOccur("order-of-operations", myQuestions) );
+console.log( getNbOccur("evaluating-expressions", myQuestions) );
+
+
+// Kick things off
+buildQuiz();
+
+// Pagination
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+
+// Show the first slide
+showSlide(currentSlide);
+
+
+
+
+
+
+
+
+
+
+
+
+function showResults(){
+
+  // gather answer containers from our quiz
+  const answerContainers = quizContainer.querySelectorAll('.answers');
+
+  // keep track of user's answers
+  let numCorrect = 0;
   
-  console.log( getNbOccur("modeling-expressions", myQuestions) );
-  console.log( getNbOccur("order-of-operations", myQuestions) );
-  console.log( getNbOccur("evaluating-expressions", myQuestions) );
+  // subTopic of questions
+  let modelingExpressionsCorrect = 0;
+  let orderOfOperationsCorrect = 0;
+  let evaluatingExpressionsCorrect = 0;
+
+  // for each question...
+  myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+    // find selected answer
+    const answerContainer = answerContainers[questionNumber];
+    const selector = `input[name=question${questionNumber}]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    // if answer is correct
+    if(userAnswer === currentQuestion.correctAnswer){
+      // add to the number of correct answers
+      numCorrect++;
+
+      // color the answers green
+      answerContainers[questionNumber].style.color = 'lightgreen';
+    }
+    // if answer is wrong or blank
+    else{
+      // color the answers red
+      answerContainers[questionNumber].style.color = 'red';
+    }
+
+    // if subTopic is Correct and Belongs to a subTopic... 
+    if(currentQuestion.subTopic === "modeling-expressions" && userAnswer === currentQuestion.correctAnswer){
+      modelingExpressionsCorrect++;
+    } else if (currentQuestion.subTopic === "order-of-operations" && userAnswer === currentQuestion.correctAnswer) {
+      orderOfOperationsCorrect++;
+    } else if (currentQuestion.subTopic === "evaluating-expressions" && userAnswer === currentQuestion.correctAnswer){
+      evaluatingExpressionsCorrect++;
+    } else{
+      document.querySelector("html").style.backgroundColor = "violet";    
+    };
+  });
+
+  // show number of correct answers out of total
+  resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  let percentageResult = Math.round(numCorrect / (myQuestions.length) * 100) + "%"
+  percentageContainer.innerHTML = "Total Percentage: " + percentageResult;
+
+  // numbers correct per subTopic
+  modelingExpressionsContainer.innerHTML = "Modeling Expressions: " + modelingExpressionsCorrect + " out of " + getNbOccur("modeling-expressions", myQuestions) + " or " + Math.round(modelingExpressionsCorrect / getNbOccur("modeling-expressions", myQuestions) * 100) + "%" ;
+
+  orderOfOperationsContainer.innerHTML = "Order of Operations: " + orderOfOperationsCorrect + " out of " + getNbOccur("order-of-operations", myQuestions) + " or " + Math.round(orderOfOperationsCorrect / getNbOccur("order-of-operations", myQuestions) * 100) + "%" ;
+
+  evaluatingExpressionsContainer.innerHTML = "Evaluating Expressions: " + evaluatingExpressionsCorrect + " out of " + getNbOccur("evaluating-expressions", myQuestions) + " or " + Math.round(evaluatingExpressionsCorrect / getNbOccur("evaluating-expressions", myQuestions) * 100) + "%" ;
+  ////////////////////
+
+let d = new Date();
+document.getElementById("submitDate").innerHTML = d;
+
+
+// MOST RECENT VERSION OF CODE
+//  https://github.com/taniarascia/sandbox/blob/master/tab/js/scripts.js
+
+// CONTINUE HERE vvv vvv vvv vvv vvv vvv vvv
+//  https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
+// https://stackoverflow.com/questions/35963412/append-data-to-localstorage-object
+
+// Secondary Sources vvv vvv vvv vvv vvv vvv vvv vvv vvv
+// https://stackoverflow.com/questions/49347392/to-do-list-delete-button-within-html-li-element
+// https://github.com/taniarascia/sandbox/blob/master/tab/js/scripts.js
+//  https://stackoverflow.com/questions/53275405/typeerror-data-foreach-is-not-a-function/53275463
+
+  localStorage.setItem('resultsPercent', JSON.stringify(percentageResult));
+  let resultsPercentage = JSON.parse(localStorage.getItem('resultsPercent'));
+  // resultsPercentage is a STRING
+  // console.log(resultsPercentage); 
+  //////////////////// 
+    let scoreToArray = JSON.stringify(resultsPercentage)
+    const ul = document.querySelector('ul');
+    const clearButton = document.getElementById('clearButton');
+    
+
+    if (localStorage.getItem('items')) {
+      itemsArray = JSON.parse(localStorage.getItem('items'))
+    } else {
+      itemsArray = []
+    };
+
+    localStorage.setItem('items', JSON.stringify(itemsArray));
+    const data = JSON.parse(localStorage.getItem('items'));
+
+    const liMaker = (text) => {
+      const li = document.createElement('li');
+      li.textContent = text;
+      ul.appendChild(li);
+    }
+
+    data.forEach(item => {
+      liMaker(item);
+    });
+
+    // WORKING HERE TO STORE resultsPercentage returns in itemsArray
+    submitButton.addEventListener('click', function (e) {
+
+      itemsArray.push(scoreToArray);
+      localStorage.setItem('items', JSON.stringify(itemsArray));
+      liMaker(scoreToArray);
+    });
+    
+    clearButton.addEventListener('click', function () {
+      localStorage.clear();
+      while (ul.firstChild) {
+        ul.removeChild(ul.firstChild);
+      }
+      itemsArray = [];
+
+
+    });
+
+};
+
+
+////////////////////////////////////////// end showResults().
 
 
 
 
 
 
-  // Kick things off
-  buildQuiz();
-
-  // Pagination
-  const previousButton = document.getElementById("previous");
-  const nextButton = document.getElementById("next");
-  const slides = document.querySelectorAll(".slide");
-  let currentSlide = 0;
-
-
-
-  // Show the first slide
-  showSlide(currentSlide);
-
-
-
-  // Event listeners
-  submitButton.addEventListener('click', showResults);
-  previousButton.addEventListener("click", showPreviousSlide);
-  nextButton.addEventListener("click", showNextSlide);
 
 
 
@@ -773,9 +509,8 @@
 
 
 
+// Event listeners
+submitButton.addEventListener('click', showResults);
 
-
-
-
-
-
+previousButton.addEventListener("click", showPreviousSlide);
+nextButton.addEventListener("click", showNextSlide);

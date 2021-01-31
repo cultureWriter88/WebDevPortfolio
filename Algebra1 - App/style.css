@@ -1,3 +1,4 @@
+
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
 
 body{
@@ -8,6 +9,7 @@ body{
   text-align: center;
   background-color: #f8f6f0;
 }
+
 h1{
   font-weight: 300;
   margin: 0px;
@@ -16,19 +18,23 @@ h1{
   background-color: #444;
   color: #fff;
 }
+
 .question{
   font-size: 30px;
   margin-bottom: 10px;
 }
+
 .answers {
   margin-bottom: 20px;
   text-align: left;
   display: inline-block;
 }
+
 .answers label{
   display: block;
   margin-bottom: 10px;
 }
+
 button{
   font-family: 'Work Sans', sans-serif;
 	font-size: 22px;
