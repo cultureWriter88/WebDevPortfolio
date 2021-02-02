@@ -369,6 +369,42 @@ showSlide(currentSlide);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function showResults(){
 
   // gather answer containers from our quiz
@@ -438,23 +474,17 @@ document.getElementById("submitDate").innerHTML = d;
 
 // CONTINUE HERE vvv vvv vvv vvv vvv vvv vvv
 //  https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
-// https://stackoverflow.com/questions/35963412/append-data-to-localstorage-object
 
-// Secondary Sources vvv vvv vvv vvv vvv vvv vvv vvv vvv
-// https://stackoverflow.com/questions/49347392/to-do-list-delete-button-within-html-li-element
-// https://github.com/taniarascia/sandbox/blob/master/tab/js/scripts.js
-//  https://stackoverflow.com/questions/53275405/typeerror-data-foreach-is-not-a-function/53275463
 
   localStorage.setItem('resultsPercent', JSON.stringify(percentageResult));
   let resultsPercentage = JSON.parse(localStorage.getItem('resultsPercent'));
   // resultsPercentage is a STRING
   // console.log(resultsPercentage); 
   //////////////////// 
-    let scoreToArray = JSON.stringify(resultsPercentage)
+  // let scoreToArray = JSON.stringify(resultsPercentage)
     const ul = document.querySelector('ul');
     const clearButton = document.getElementById('clearButton');
     
-
     if (localStorage.getItem('items')) {
       itemsArray = JSON.parse(localStorage.getItem('items'))
     } else {
@@ -462,11 +492,12 @@ document.getElementById("submitDate").innerHTML = d;
     };
 
     localStorage.setItem('items', JSON.stringify(itemsArray));
+    
     const data = JSON.parse(localStorage.getItem('items'));
 
-    const liMaker = (text) => {
+    const liMaker = (resultsPercentage) => {
       const li = document.createElement('li');
-      li.textContent = text;
+      li.textContent = resultsPercentage;
       ul.appendChild(li);
     }
 
@@ -474,15 +505,13 @@ document.getElementById("submitDate").innerHTML = d;
       liMaker(item);
     });
 
-    // WORKING HERE TO STORE resultsPercentage returns in itemsArray
-    submitButton.addEventListener('click', function (e) {
-
-      itemsArray.push(scoreToArray);
-      localStorage.setItem('items', JSON.stringify(itemsArray));
-      liMaker(scoreToArray);
-    });
+    // SOLVED on 2-1-21 took 1 week to figure this out
+    itemsArray.push(resultsPercentage);
+    localStorage.setItem('items', JSON.stringify(itemsArray));
+    liMaker(resultsPercentage);
     
-    clearButton.addEventListener('click', function () {
+
+    clearButton.addEventListener("click", function () {
       localStorage.clear();
       while (ul.firstChild) {
         ul.removeChild(ul.firstChild);
@@ -497,6 +526,48 @@ document.getElementById("submitDate").innerHTML = d;
 
 ////////////////////////////////////////// end showResults().
 
+// SOLVED on 2-1-21 took 1 week to figure this out
+
+// Solved issue after a week of trial and error. Struggled to save final results to localStorage.items
+
+// I removed the event listener within the event listener in order to store array objects pushed from resultsPercentage.
+
+// Now working on: 
+// - storing that localStorage.items data on a database.
+// - user authentication so login in required.
+// - each login saves its results on database and displays scores.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -510,7 +581,7 @@ document.getElementById("submitDate").innerHTML = d;
 
 
 // Event listeners
-submitButton.addEventListener('click', showResults);
+submitButton.addEventListener("click", showResults);
 
 previousButton.addEventListener("click", showPreviousSlide);
 nextButton.addEventListener("click", showNextSlide);
