@@ -524,6 +524,29 @@ document.getElementById("submitDate").innerHTML = d;
 };
 
 
+//////////////////////////////////////////
+
+// Javascript and Node.js authentication basic setup
+// MDN Folder (TODOLIST)
+// Storing the users in your database
+// Making sure you have the right user attributes defined
+// Forcing users to be logged in to view a page
+// Building registration and login forms
+// Creating password reset workflows that email users a link
+// Verifying new users when they sign up via email
+
+//////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////////// end showResults().
 
 // SOLVED on 2-1-21 took 1 week to figure this out
