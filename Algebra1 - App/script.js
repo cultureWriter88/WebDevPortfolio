@@ -353,57 +353,10 @@ const previousButton = document.getElementById("previous");
 const nextButton = document.getElementById("next");
 const slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
-
-
 // Show the first slide
 showSlide(currentSlide);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+///////////////////////////////////
 
 function showResults(){
 
@@ -465,6 +418,9 @@ function showResults(){
   evaluatingExpressionsContainer.innerHTML = "Evaluating Expressions: " + evaluatingExpressionsCorrect + " out of " + getNbOccur("evaluating-expressions", myQuestions) + " or " + Math.round(evaluatingExpressionsCorrect / getNbOccur("evaluating-expressions", myQuestions) * 100) + "%" ;
   ////////////////////
 
+
+// NEXT STEPS 
+// ADD a time stamp to each score that gets passed to the localStorage.items
 let d = new Date();
 document.getElementById("submitDate").innerHTML = d;
 
@@ -559,34 +515,6 @@ document.getElementById("submitDate").innerHTML = d;
 // - storing that localStorage.items data on a database.
 // - user authentication so login in required.
 // - each login saves its results on database and displays scores.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

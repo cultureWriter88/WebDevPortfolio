@@ -7,69 +7,51 @@
   <title>Algebra 1 Review App</title>
 </head>
 <body>
+
   <h1>Algebra 1 - Review App</h1>
   <div class="quiz-container">
-
-  <!-- Part 1 - Basic Structure of Quiz - Part 1-->
+    <!-- Part 1 - Basic Structure of Quiz - Part 1-->
     <div id="quiz"></div>
-    </div>
-    <!-- Spacing For Buttons -->
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-    <!-- Spacing For Buttons -->
+  </div>
+
+  <div class="buttons">
     <button id="previous">Previous Question</button>
     <button id="next">Next Question</button>
-
-  <!-- Part 2 - Basic Structure of Quiz - Part 2-->  
     <button id="submit">Submit Quiz</button>
-
-
-  <!-- Part 3 - Basic Structure of Quiz - Part 3-->
-    <!-- These are the results after taking quiz -->
-    <div id="results"></div>
-    <div id="percentage"></div>
-        <p id="submitDate"></p>
-      <!-- subTopic's Breakdown -->
-      <div id="modeling-expressions">
-      </div>
-      <div id="order-of-operations"></div>
-      <div id="evaluating-expressions"></div>
-      <div id="scores"></div>
-      
-      <br>
-
-
-<!-- ////////////////////////////// -->
-  <!-- localStorage scores saved -->
-  <div class="small-container">
-      <h1>New Tab App</h1>
-
-        <form>
-            <input id="item" type="text" placeholder="New">
-        </form>
-
-        <h2>Items</h2>
-            <ul>
-            </ul>
-
-      <button id="clearButton">Clear All</button>
   </div>
-  <!-- END - localStorage scores saved - END -->
-<!-- ////////////////////////////// -->
+      
+
+  <!-- ////////////////////////////// -->
+    <!-- localStorage scores saved -->
+    <div class="small-container">
+        <h1>Saved Data</h1>
+      <!-- Part 3 - Basic Structure of Quiz - Part 3-->
+      <!-- These are the results after taking quiz -->
+      <div id="results"></div>
+      <div id="percentage"></div>
+          <p id="submitDate"></p>
+        <!-- subTopic's Breakdown -->
+        <div id="modeling-expressions"></div>
+        <div id="order-of-operations"></div>
+        <div id="evaluating-expressions"></div>
+        <div id="scores"></div>
+
+          <h2>Total Scores Saved (Clear All to Erase)</h2>
+              <ul>
+              </ul>
+
+        <button id="clearButton">Clear Stored Results</button>
+    </div>
+    <!-- END - localStorage scores saved - END -->
+  <!-- ////////////////////////////// -->
 
 
+  <script src="script.js"></script>
 
-
-
-
-<script src="script.js"></script>
-
-<!-- CONNECTION TO mongoDB -->
-<!-- <script src="app.js"></script> -->
+  <!-- CONNECTION TO mongoDB -->
+  <!-- <script src="app.js"></script> -->
 
 </body>
+
 </html>
 
